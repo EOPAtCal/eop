@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <base target="_blank">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>DLF Scholarship Application</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        #forminner hr{
+            border: 1px dashed #009688;
+            margin: 50px 0px;
+        }
+    </style>
+
+    <form class="main" id="form" name="form" style="max-width: 700px;margin: 40px auto;">
+        <div id="forminner">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="center-align teal-text">De La Fuente Scholarship Foundation Application</h5>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="firstname" name="Firstname" required="" type="text"> <label for="firstname">First Name</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="lastname" name="Lastname" required="" type="text"> <label for="lastname">Last Name</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <p>Gender</p>
+                <p><input id="male" name="gender" type="radio" value="Male"> <label for="male">Male</label></p>
+                <p><input id="female" name="gender" type="radio" value="Female"> <label for="female">Female</label></p>
+                <p><input id="other" name="gender" type="radio" value="Other"> <label for="other">Other</label></p>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="race" name="Race" required="" type="text"> <label for="race">Race/Ethnicity</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="address" name="Address" required="" type="text"> <label for="address">Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="city" name="City" required="" type="text"> <label for="city">City</label>
+                </div>
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="state" name="State" required="" type="text"> <label for="state">State/Province</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="zip" name="Zip" required="" type="text"> <label for="zip">Zip/Postal Code</label>
+                </div>
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="country" name="Country" required="" type="text"> <label for="country">Country</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="homephone" name="Homephone" required="" type="text"> <label for="homephone">Home Phone</label>
+                </div>
+                <div class="input-field col s6">
+                    <input aria-required="true" class="validate" id="cellphone" name="Cellphone" required="" type="text"> <label for="cellphone">Cell Phone</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="email" name="Email" required="" type="email"> <label for="email">Email Address</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <p>Have you submitted the FAFSA? (Free Application for Federal Student Aid)</p>
+                <p><input id="fafsa-yes" name="fafsa" type="radio" value="Yes"> <label for="fafsa-yes">Yes</label></p>
+                <p><input id="fafsa-no" name="fafsa" type="radio" value="No"> <label for="fafsa-no">No</label></p>
+            </div>
+
+            <div class="row">
+                <p>Are you eligible for federal financial aid?</p>
+                <p><input id="financial-yes" name="financial" type="radio" value="Yes"> <label for="financial-yes">Yes</label></p>
+                <p><input id="financial-no" name="financial" type="radio" value="No"> <label for="financial-no">No</label></p>
+            </div>
+
+            <div class="row">
+                <p>Have you completed an AB540 affidavit? (Or do you plan to do so)</p>
+                <p><input id="AB540-yes" name="AB540" type="radio" value="Yes"> <label for="AB540-yes">Yes</label></p>
+                <p><input id="AB540-no" name="AB540" type="radio" value="No"> <label for="AB540-no">No</label></p>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="highschool" name="Highschool" required="" type="text"> <label for="highschool">High School/Community College you will graduate from this year</label>
+                </div>
+            </div>
+            <div class="row">
+                <p>Expected Graduation Date</p>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="grad-mm" name="Grad-mm" required="" type="text"> <label for="grad-mm">MM</label>
+                </div>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="grad-dd" name="Grad-dd" required="" type="text"> <label for="grad-dd">DD</label>
+                </div>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="grad-yyyy" name="Grad-yyyy" required="" type="text"> <label for="grad-yyyy">YYYY</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="gpa" name="Gpa" required="" type="text"> <label for="gpa">GPA (Weighted)</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="university" name="University" required="" type="text"> <label for="university">Four-year college/university you will be enrolled in 2019/2020</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="major" name="Major" required="" type="text"> <label for="major">Intended Major</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <p>Expected College Graduation Date</p>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="college-grad-mm" name="College-grad-mm" required="" type="text"> <label for="college-grad-mm">MM</label>
+                </div>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="college-grad-dd" name="College-grad-dd" required="" type="text"> <label for="college-grad-dd">DD</label>
+                </div>
+                <div class="input-field col s2">
+                    <input aria-required="true" class="validate" id="college-grad-yyyy" name="College-grad-yyyy" required="" type="text"> <label for="college-grad-yyyy">YYYY</label>
+                </div>
+            </div>
+
+            <hr/>
+    
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="$" aria-required="true" class="validate" id="income" name="Income" required="" type="text"> <label for="income">Household Yearly Income</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="household-size" name="Household-size" required="" type="text"> <label for="household-size">Number of people residing in the household</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <p>Do you qualify for free/reduced school lunch?</p>
+                <p><input id="lunch-yes" name="lunch" type="radio" value="Yes"> <label for="lunch-yes">Yes</label></p>
+                <p><input id="lunch-no" name="lunch" type="radio" value="No"> <label for="lunch-no">No</label></p>
+            </div>
+
+            <div class="row">
+                <p>Mother's highest education level</p>
+                <p><input id="mother-education-hs" name="mother-education" type="radio" value="High School Diploma"> <label for="mother-education-hs">High School Diploma</label></p>
+                <p><input id="mother-education-ad" name="mother-education" type="radio" value="Associates Degree"> <label for="mother-education-ad">Associates Degree</label></p>
+                <p><input id="mother-education-ba" name="mother-education" type="radio" value="B.A./B.S."> <label for="mother-education-ba">B.A./B.S.</label></p>
+                <p><input id="mother-education-masters" name="mother-education" type="radio" value="Masters Degree"> <label for="mother-education-masters">Masters Degree</label></p>
+                <p><input id="mother-education-phd" name="mother-education" type="radio" value="PhD or higher"> <label for="mother-education-phd">PhD or higher</label></p>
+                <p><input id="mother-education-other" name="mother-education" type="radio" value="Other, I don't know"> <label for="mother-education-other">Other/I don't know</label></p>
+                <p><input id="mother-education-less" name="mother-education" type="radio" value="Less than High School"> <label for="mother-education-less">Less than High School</label></p>
+            </div>
+
+            <div class="row">
+                <p>Father's highest education level</p>
+                <p><input id="father-education-hs" name="father-education" type="radio" value="High School Diploma"> <label for="father-education-hs">High School Diploma</label></p>
+                <p><input id="father-education-ad" name="father-education" type="radio" value="Associates Degree"> <label for="father-education-ad">Associates Degree</label></p>
+                <p><input id="father-education-ba" name="father-education" type="radio" value="B.A./B.S."> <label for="father-education-ba">B.A./B.S.</label></p>
+                <p><input id="father-education-masters" name="father-education" type="radio" value="Masters Degree"> <label for="father-education-masters">Masters Degree</label></p>
+                <p><input id="father-education-phd" name="father-education" type="radio" value="PhD or higher"> <label for="father-education-phd">PhD or higher</label></p>
+                <p><input id="father-education-other" name="father-education" type="radio" value="Other, I don't know"> <label for="father-education-other">Other/I don't know</label></p>
+                <p><input id="father-education-less" name="father-education" type="radio" value="Less than High School"> <label for="father-education-less">Less than High School</label></p>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input aria-required="true" class="validate" id="family-college" name="Family-college" required="" type="text"> <label for="family-college">Number of family members currently attending college (not including yourself)?</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <p>Written Statement #1: Please include the primary personal statement you included as part of your admissions application to the University that is your top choice.</p>
+                <div class="input-field col s12">
+                    <textarea aria-required="true" class="validate materialize-textarea" id="essay1" required=""></textarea>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <p>Written Statement #2: Please submit a minimum three paragraph response to the following question - Why is a college education important to you? What more can a community like Oakland do to get more students to graduate from high school and pursue a higher education?</p>
+                <div class="input-field col s12">
+                    <textarea aria-required="true" class="validate materialize-textarea" id="essay2" required=""></textarea>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <p>Written Statement #3: Please submit a minimum two paragraph response to the following question - What volunteer experience, community service, leadership opportunities, family responsibilities (like work), or extracurricular activities are you most proud of? What impact has your involvement with these activities had on others?</p>
+                <div class="input-field col s12">
+                    <textarea aria-required="true" class="validate materialize-textarea" id="essay3" required=""></textarea>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <h5>RECOMMENDATION LETTER AND TRANSCRIPT</h5>
+                <p>Complete applications require a one-page recommendation letter (from a teacher, counselor, principal, coach, etc) that describes why you are deserving of the scholarship. In addition to the recommendation letter, you must also submit your most current transcripts. Students who do not submit these files will not be considered for the scholarship.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="file-field input-field col s12">
+                    <div class="btn">
+                        <span>Upload Recommendation Letter</span> <input id="file1" type="file">
+                    </div>
+
+
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" placeholder="Select a file on your computer" type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="file-field input-field col s12">
+                    <div class="btn">
+                        <span>Upload Most Current Transcripts</span> <input id="file2" type="file">
+                    </div>
+
+
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" placeholder="Select a file on your computer" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <button class="waves-effect waves-light btn submit-btn" onsubmit="submitForm(); return false;" type="submit">Submit</button>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s12" id="progress">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="success" style="display:none">
+            <h5 class="left-align teal-text">Form submitted!</h5>
+
+
+            <p>Your application has been successfully uploaded.</p>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    </script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
+    </script> 
+    <script>
+            function showSuccess(e) {
+              if (e === "OK") { 
+                $('#forminner').hide();
+                $('#success').show();
+              } else {
+                showError(e);
+              }
+            }
+
+            function showError(e) {
+              $('#progress').addClass('red-text').html(e);
+              console.log(e);
+            }
+
+            function showMessage(e) {
+              $('#progress').removeClass('red-text').html(e);
+            }
+            
+            //Code for submitting
+            var files = [];
+            function submitForm() {
+              var file1 = $('#file1')[0].files;
+              var file2 = $('#file2')[0].files;
+
+              if (file1.length === 0 || file2.length===0) {
+                showError("Please make sure both files are uploaded.");
+                return;
+              }
+              
+
+
+              var file1 = file1[0];
+              var file2 = file2[0];
+
+              fileSizeLimit = 1024 * 1024 * 5
+              if (file1.size > fileSizeLimit || file2.size > fileSizeLimit) {
+                showError("Each file should be < 5 MB.");
+                return;
+              }
+
+              showMessage("Submitting form and uploading files..");
+
+              //fill out files array
+              files.push(file1);
+              files.push(file2);
+              //create folder
+              folderName = $('input#firstname').val() + " " + $('input#lastname').val();
+              console.log("Creating folder...");
+              createFolderWithFiles(folderName);
+            }
+            
+            function createFolderWithFiles(folderName){
+              google.script.run
+                .withSuccessHandler(folderSuccessHandler)
+                .createFolderForSubmission(folderName);
+            }
+            
+            function folderSuccessHandler(e){
+              if (e === "OK") {
+                console.log("Folder successfully made. Uploading files...");
+                //upload files
+                updateInfoDoc($('input#firstname').val() + " " + $('input#lastname').val());
+                updateInfoSheet();
+                uploadFile(files[0]);
+                uploadFile(files[1]);
+              } else {
+                showError(e);
+              }
+            }
+           
+            function updateInfoSheet(){
+              console.log("Updating Information Sheet...");
+              
+              data = [];
+              data.push($('input#firstname').val());
+              data.push($('input#lastname').val());
+              data.push($('input[name=gender]:checked').val());
+              data.push($('input#race').val());
+              data.push($('input#address').val());
+              data.push($('input#city').val());
+              data.push($('input#state').val());
+              data.push($('input#zip').val());
+              data.push($('input#country').val());
+              data.push($('input#homephone').val());
+              data.push($('input#cellphone').val());
+              data.push($('input#email').val());
+              data.push($('input[name=fafsa]:checked').val());
+              data.push($('input[name=financial]:checked').val());
+              data.push($('input[name=AB540]:checked').val());
+              data.push($('input#highschool').val());
+              data.push($('input#grad-mm').val()+"/"+$('input#grad-dd').val()+"/"+$('input#grad-yyyy').val());
+              data.push($('input#gpa').val());
+              data.push($('input#university').val());
+              data.push($('input#major').val());
+              data.push($('input#college-grad-mm').val()+"/"+$('input#college-grad-dd').val()+"/"+$('input#college-grad-yyyy').val());
+              data.push($('input#income').val());
+              data.push($('input#household-size').val());
+              data.push($('input[name=lunch]:checked').val());
+              data.push($('input[name=mother-education]:checked').val());
+              data.push($('input[name=father-education]:checked').val());
+              data.push($('input#family-college').val());
+              data.push($('textarea#essay1').val());
+              data.push($('textarea#essay2').val());
+              data.push($('textarea#essay3').val());
+              
+              google.script.run
+              .updateInfoSheetToGoogleDrive(data);
+            }
+           
+            function updateInfoDoc(folderName){
+              console.log("Updating Information Document...");
+              
+              data = "";
+              
+              google.script.run
+                .updateInfoDocToGoogleDrive(data, folderName);
+            }
+            
+            function uploadFile(file){
+              var reader = new FileReader();
+              reader.readAsDataURL(file)
+              
+              reader.onloadend = function(e) {
+                if (e.target.error != null) {
+                  showError("File " + file.name + " could not be read.");
+                  return;
+                } else {
+                  google.script.run
+                    .withSuccessHandler(showSuccess)
+                    .uploadFileToGoogleDrive(e.target.result, file.name, $('input#firstname').val() + " " + $('input#lastname').val());
+                }
+              };
+            }
+            
+            
+
+    </script>
+</body>
+</html>

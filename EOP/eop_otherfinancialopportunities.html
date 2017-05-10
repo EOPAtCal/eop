@@ -1,0 +1,153 @@
+<html>
+<head>
+</head>
+    <body class="container" style="margin-top:20px;">
+        <!-- Bootstrap Grid Framework -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+        <!-- Edit code where comments tell you to (a little below here)  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+
+       <!-- Add/remove grants a little below, where comments tell you to -->
+        <script>
+            var app = angular.module("other-financial-opportunities", []);
+            app.controller("other-financial-opportunities-controller", function($scope) {
+                $scope.grants = [
+                // EDIT GRANTS UNDER HERE. Ask web designer if you have any questions
+                    {
+                        "name": "UC Berkeley’s Scholarship Connection",
+                        "date": "",
+                        "location":"",
+                        "img_url": "",
+                        "description": "UC Berkeley's Scholarship Connection provides information on many various grants and scholarships available to students.",
+                        "rsvp_url": "http://scholarships.berkeley.edu/",
+                        "rsvp_text": "Find Out More",
+                    },
+                    {
+                        "name": "Benjamin A. Gilman International Scholarship",
+                        "date": "",
+                        "location":"",
+                        "img_url": "",
+                        "description": "The Benjamin A. Gilman International Scholarship seeks to lower barriers to undergraduate study abroad by offering scholarships to students with financial need. Underrepresented students in study abroad programs are encouraged to apply.",
+                        "rsvp_url": "http://www.iie.org/en/Programs/Gilman-Scholarship-Program#.WMzcbBLyvq0",
+                        "rsvp_text": "Find Out More",
+                    },
+                    {
+                        "name": "Disabled Students' Program",
+                        "date": "",
+                        "location":"",
+                        "img_url": "",
+                        "description": "UC Berkeley's Disabled Students' Program offers information about various financial resources for students with disabilities.",
+                        "rsvp_url": "http://dsp.berkeley.edu/programs/trio-dsp#content",
+                        "rsvp_text": "Find Out More",
+                    },
+                // DO NOT EDIT BELOW THIS POINT
+                ];
+            });
+        </script>
+        <!-- CSS -->
+        <style>
+            #other-financial-opportunities-list .grant-card{
+                margin-bottom: 15px;
+            }
+            #other-financial-opportunities-list .grant-card-content{
+                background-color: #FFF;
+
+                border: 1px solid #DDD;
+
+                -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            }
+            #other-financial-opportunities-list .padding-sm{
+                padding: 10px;
+            }
+            #other-financial-opportunities-list h3{
+                margin: 0px;
+            }
+            #other-financial-opportunities-list p{
+                margin: 0px;
+            }
+            #other-financial-opportunities-list img{
+                max-width: 100%;
+            }
+            #other-financial-opportunities-list hr{
+                margin: 0px 0px;
+                border: 0;
+                border-top: 1px solid #eee;
+                height: 0;
+            }
+            #other-financial-opportunities-list .rsvp-button{
+                background-color: #3B7EA1;
+                color: white;
+                transition: background-color 0.3s;
+            }
+            #other-financial-opportunities-list .rsvp-button h3{
+                color: white;
+                margin: 0px;
+                text-align: center;
+            }
+            #other-financial-opportunities-list .rsvp-button:hover{
+                background-color: #579cc1;
+                color: white;
+                cursor: pointer;
+            }
+            #other-financial-opportunities-list a{
+                text-decoration: none;
+            }
+            #other-financial-opportunities-list hr{
+                margin: 10px 0px;
+            }
+        </style>
+        <!-- HTML -->
+        <div ng-cloak id="other-financial-opportunities-list" ng-app="other-financial-opportunities" ng-controller="other-financial-opportunities-controller">
+            <div class="row equal-row-sm">
+                <div ng-repeat="grant in grants">
+                    <div class="clearfix" ng-if="$index % 2 == 0"></div>
+                    <div class="col-sm-6 grant-card">
+                        <div class="grant-card-content">
+                            <img ng-if="grant.img_url" ng-src="{{grant.img_url}}"></img>
+                            <div class="padding-sm">
+                                <h3>{{grant.name}}</h3>
+                                <i>
+                                    <p>{{grant.date}}</p>
+                                    <p>{{grant.location}}</p>
+                                </i>
+                                <hr/>
+                                <p>{{grant.description}}</p>
+                            </div>
+                            <a ng-if="grant.rsvp_url" ng-href="{{grant.rsvp_url}}" target="_blank">
+                                <div class="rsvp-button">
+                                    <div class="padding-sm text-center"><h3>{{grant.rsvp_text}}</h3></div>
+                                </div>
+                            </a>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            angular.bootstrap(document.getElementById("other-financial-opportunities-list"), ['other-financial-opportunities']);
+        </script>
+
+
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
+            body{
+                font-family: "Open Sans";
+                font-size: 16px;
+            }
+            h2{
+                font-size: 23px;
+                font-family: "Roboto Slab";
+            }
+            h3{
+                font-size: 18px;
+                font-family: "Roboto Slab";
+                margin: 0px;
+            }
+        </style>
+    </body>
+</html>

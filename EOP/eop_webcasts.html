@@ -1,0 +1,142 @@
+<html>
+<head>
+</head>
+    <body class="container" style="margin-top:20px;">
+        <!-- Bootstrap Grid Framework -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+        <!-- Edit code where comments tell you to (a little below here)  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+
+       <!-- Add/remove events a little below, where comments tell you to -->
+        <script>
+            var app = angular.module("eop-events", []);
+            app.controller("eop-events-controller", function($scope) {
+                $scope.events = [
+                // EDIT EVENTS UNDER HERE. Ask web designer if you have any questions
+                    {
+                        "name": "EOP Webcast - English",
+                        "date": "Tuesday, April 18th, 2017, 6:00PM",
+                        "location":"",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/EOPWebcast1.png",
+                        "description": "Cannot attend our EOP New Admit Receptions? No worries! We'll be hosting TWO webinars for newly admitted students and their families to learn more about our program and the resources and communities available in UC Berkeley. We will be hosting a live webinar in English on April 18th and a Spanish webinar on April 20th! More information is provided in the form below.",
+                        "rsvp_url": "",
+                        "rsvp_text": "",
+                    },
+                    {
+                        "name": "EOP Webcast - Spanish",
+                        "date": "Thursday, April 20th, 2017, 6:00PM",
+                        "location":"",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/EOPWebcast2.png",
+                        "description": "Cannot attend our EOP New Admit Receptions? No worries! We'll be hosting TWO webinars for newly admitted students and their families to learn more about our program and the resources and communities available in UC Berkeley. We will be hosting a live webinar in English on April 18th and a Spanish webinar on April 20th! More information is provided in the form below.",
+                        "rsvp_url": "",
+                        "rsvp_text": "",
+                    },
+                // DO NOT EDIT BELOW THIS POINT
+                ];
+            });
+        </script>
+        <!-- CSS -->
+        <style>
+            #eop-events-list .event-card{
+                margin-bottom: 15px;
+            }
+            #eop-events-list .event-card-content{
+                background-color: #FFF;
+
+                border: 1px solid #DDD;
+
+                -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            }
+            #eop-events-list .padding-sm{
+                padding: 10px;
+            }
+            #eop-events-list h3{
+                margin: 0px;
+            }
+            #eop-events-list p{
+                margin: 0px;
+            }
+            #eop-events-list img{
+                max-width: 100%;
+            }
+            #eop-events-list hr{
+                margin: 0px 0px;
+                border: 0;
+                border-top: 1px solid #eee;
+                height: 0;
+            }
+            #eop-events-list .rsvp-button{
+                background-color: #3B7EA1;
+                color: white;
+                transition: background-color 0.3s;
+            }
+            #eop-events-list .rsvp-button h3{
+                color: white;
+                margin: 0px;
+                text-align: center;
+            }
+            #eop-events-list .rsvp-button:hover{
+                background-color: #579cc1;
+                color: white;
+                cursor: pointer;
+            }
+            #eop-events-list a{
+                text-decoration: none;
+            }
+            #eop-events-list hr{
+                margin: 10px 0px;
+            }
+        </style>
+        <!-- HTML -->
+        <div ng-cloak id="eop-events-list" ng-app="eop-events" ng-controller="eop-events-controller">
+            <div class="row equal-row-sm">
+                <div ng-repeat="event in events">
+                    <div class="clearfix" ng-if="$index % 2 == 0"></div>
+                    <div class="col-sm-6 event-card">
+                        <div class="event-card-content">
+                            <img ng-if="event.img_url" ng-src="{{event.img_url}}"></img>
+                            <div class="padding-sm">
+                                <h3>{{event.name}}</h3>
+                                <i>
+                                    <p>{{event.date}}</p>
+                                    <a ng-if="event.location_url" ng-href="{{event.location_url}}" target="_blank"><p>{{event.location}}</p></a>
+                                    <p ng-if="!event.location_url">{{event.location}}</p>
+                                </i>
+                                <hr/>
+                                <p>{{event.description}} <strong>This live webcast has passed. You can view this webcast below in the archive.</strong></p>
+                            </div>
+                            <a ng-if="event.rsvp_url" ng-href="{{event.rsvp_url}}" target="_blank">
+                                <div class="rsvp-button">
+                                    <div class="padding-sm text-center"><h3>{{event.rsvp_text}}</h3></div>
+                                </div>
+                            </a>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
+            body{
+                font-family: "Open Sans";
+                font-size: 16px;
+            }
+            h2{
+                font-size: 23px;
+                font-family: "Roboto Slab";
+            }
+            h3{
+                font-size: 18px;
+                font-family: "Roboto Slab";
+                margin: 0px;
+            }
+        </style>
+    </body>
+</html>

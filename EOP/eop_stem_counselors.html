@@ -1,0 +1,383 @@
+<html>
+<head>
+</head>
+    <body class="container">
+        <!-- Bootstrap Grid Framework -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+
+
+        <!-- Edit code where comments tell you to (a little below here)  -->
+        <script>
+            var app = angular.module("peer-academic-counselors", []);
+            app.controller("peer-academic-counselors-controller", function($scope) {
+        //<!-- DO NOT EDIT CODE ABOVE THIS POINT. SEE BELOW FOR EDITS-->
+        //<!-- Edit below in $scope.profiles, following the format. Email the web designer if you have questions.-->
+                $scope.profiles = [
+                    {
+                        "name": "Gustavo Armando Alvarez Escalante",
+                        "major": "Mechanical Engineering Major, Global Poverty and Practice Minor",
+                        "hometown": "San Bernardino, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Gustavo.jpg",
+                        "link_url": "http://eop.berkeley.edu/gustavo-escalante",
+                    },
+                    {
+                        "name": "Francisco Martinez",
+                        "major": "Civil Engineering Major",
+                        "hometown": "San Bernardino, Huntington Park, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Francisco.jpg",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Luz G Memije",
+                        "major": "Mechanical Engineering Major, Spanish and Global Poverty and Practice Minors",
+                        "hometown": "Lake Elsinore (Riverside County), CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Luz.jpg",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Aileen Iniguez",
+                        "major": "Applied Mathematics Major, Concentrated on Operations Research",
+                        "hometown": "Oakland, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Aileen_Headshot.jpeg",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Maria Cabrera",
+                        "major": "Biochemistry Major",
+                        "hometown": "Los Angeles, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Marian.png",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Gabby Paras",
+                        "major": "Molecular and Cellular Biology Major",
+                        "hometown": "Long Beach, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/GabbyP.jpg",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Fernanda Sanchez Moreno",
+                        "major": "Intended Computer Science and Cognitive Science, History Minor",
+                        "hometown": "Santa Ana, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Fernanda.jpg",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Kelly Lancaster",
+                        "major": "Premedical Molecular Cell Biology and Integrative Biology Double Major",
+                        "hometown": "Redlands, California",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Kellyn.png",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Gabrielle Santa Maria Balanon",
+                        "major": "Intended Computer Science, Ethnic Studies Minor",
+                        "hometown": "Seattle, WA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/GabbyB.JPG",
+                        "link_url": "",
+                    },
+                    {
+                        "name": "Silvia Kim",
+                        "major": "Cognitive Science Major",
+                        "hometown": "Koreatown Los Angeles, CA",
+                        "img_url": "https://julian-ledesma.squarespace.com/s/Silvia.jpg",
+                        "link_url": "",
+                    },
+                ]
+        //<!-- DO NOT EDIT CODE BELOW UNLESS YOU HAVE PRIOR WEB DESIGN EXPERIENCE-->
+            });
+        </script>
+        <!-- DO NOT EDIT CODE BELOW UNLESS YOU HAVE PRIOR WEB DESIGN EXPERIENCE-->
+        <!-- Custom Styling -->
+        <style>
+            #profiles a, #profiles a:hover, #profiles a:active, #profiles a:visited{
+                /*color: inherit;*/
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #profiles .profile-card{
+                margin-bottom: 20px;
+            }
+
+            #profiles .profile-card-content{
+                background-color:#FFF;
+                border: 1px solid #DDD;
+
+                -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+                box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            }
+
+            #profiles .profile-img{
+                height:300px;
+                image-orientation: 0deg;
+            }       
+            @media (max-width: 768px) {
+                #profiles .profile-img{
+                    height:500px;
+                }
+            }
+
+            #profiles .profile-content{
+                min-height:160px;
+                padding: 15px;
+            }
+            @media (max-width: 990px){
+                #profiles .profile-content{
+                    min-height: 200px;
+                }
+            }
+            @media (max-width: 768px) {
+                #profiles .profile-content{
+                    min-height:70px;
+                }
+            }
+
+            #profiles h3 {
+                margin: 0px 0px 2px 0px;
+            }
+
+            #profiles hr{
+                margin: 8px 0px;
+            }
+
+        </style>
+        <!-- WARNING from web designer: All the code below is HTML. Only edit if you want to change the formatting/style of boxes. -->
+        <div ng-cloak id="profiles" ng-app="peer-academic-counselors" ng-controller="peer-academic-counselors-controller">
+            <div class="row">
+                <div ng-repeat="profile in profiles">
+                    <div class="clearfix" ng-if="$index % 4 == 0 && $index!=0"></div>
+                    <div class="profile-card col-sm-3">
+                        <div class="profile-card-content">
+                            <div class="profile-img" style="width:100%;overflow:hidden;background-size:cover;background-position:center top;" ng-style="{'background-image': 'url(' + profile.img_url + ')'}"></div>
+                            <div class="profile-content">
+                                <div><h3>{{profile.name}}</h3></div>
+                                <hr/>
+                                <i><div><b>{{profile.hometown}}</b></div>
+                                <div>{{profile.major}}</div></i>
+                                <a ng-if="profile.link_url" ng-href="{{profile.link_url}}">View Full Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab');
+            body{
+                font-family: "Open Sans";
+                font-size: 14px;
+            }
+            h2{
+                font-size: 23px;
+                font-family: "Roboto Slab";
+            }
+            h3{
+                font-size: 18px;
+                font-family: "Roboto Slab";
+            }
+        </style>
+        <!-- <table cellpadding="20" class"staff"="">
+            <tbody bgcolor="DDDDDD">
+                <tr>
+                    <tr>
+                        <td>
+                            <a href="http://eop.berkeley.edu/camila-a-moreno" target="_blank">
+                                <img alt="Edlynne" height="200" src="http://static1.squarespace.com/static/51095940e4b093a50121aa90/t/56db622b45bf214a0b384017/1457218123154/" width="200"/>
+                            </a>
+                        </td>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>
+        <td>
+            <a href="http://eop.berkeley.edu/yordanos-dejen" target="_blank">
+                <img alt="Yordanos" height="200" src="http://julian-ledesma.squarespace.com/s/yordanos-001.jpg" width="200"/>
+            </a>
+        </td>
+        <td>
+            <a href="http://eop.berkeley.edu/bianca-rodriguez" target="_blank">
+                <img alt="Bianca" height="200" src="http://julian-ledesma.squarespace.com/s/bianca.jpg" width="200"/>
+            </a>
+        </td>
+        <td>
+            <a href="http://eop.berkeley.edu/jaymon-ortega" target="_blank">
+                <img alt="Jaymon" height="200" src="http://julian-ledesma.squarespace.com/s/jaymon.jpg" width="200"/>
+            </a>
+        </td>
+        <tr>
+            <td>
+                <font color="5288F8">
+                    <b>
+                        Camila A. Moreno-Jimenez
+                    </b>
+                </font>
+            </td>
+        </tr>
+        <i>
+            Anthropology/Peace &
+        </i>
+        <br>
+            <i>
+                Conflict Studies
+            </i>
+        </br>
+        <b>
+            Tijuana Baja California, Mexico
+        </b>
+        <a href="http://eop.berkeley.edu/camila-a-moreno" target="_blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Yordanos Dejen
+                </b>
+            </font>
+        </td>
+        <i>
+            Ethnic Studies &
+        </i>
+        <i>
+            Legal Studies
+        </i>
+        <b>
+            San Jose, CA
+        </b>
+        <a href="http://eop.berkeley.edu/yordanos-dejen" target="_blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Bianca V. Rodriguez
+                </b>
+            </font>
+        </td>
+        <i>
+            Ethnic Studies &
+        </i>
+        <i>
+            Native American Studies
+        </i>
+        <b>
+            East Palo Alto
+        </b>
+        <a href="http://eop.berkeley.edu/bianca-rodriguez" target="_blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Jaymon Ortega
+                </b>
+            </font>
+        </td>
+        <i>
+            Psychology/Education
+        </i>
+        <b>
+            San Fernando Valley, CA
+        </b>
+        <a href="http://eop.berkeley.edu/jaymon-ortega" target="_blank">
+            View full Profile
+        </a>
+        <tr>
+            <tr>
+                <td>
+                    <a href="http://eop.berkeley.edu/giovani-bautista" target="_blank">
+                        <img alt="Eric" height="200" src="http://julian-ledesma.squarespace.com/s/giovani.jpg" width="200"/>
+                    </a>
+                </td>
+            </tr>
+        </tr>
+        <td>
+            <a href="http://eop.berkeley.edu/paola-paredes" target="blank">
+                <img alt="Paola" height="200" src="http://julian-ledesma.squarespace.com/s/paola.jpg" width="200"/>
+            </a>
+        </td>
+        <td>
+            <a href="http://eop.berkeley.edu/ricky-muniz" target="blank">
+                <img alt="Sarah" height="200" src="http://julian-ledesma.squarespace.com/s/ricky.jpg" width="200"/>
+            </a>
+        </td>
+        <td>
+            <a href="http://eop.berkeley.edu/daniela-miramontes" target="blank">
+                <img alt="Daniela" height="200" src="http://julian-ledesma.squarespace.com/s/daniela.jpg" width="200"/>
+            </a>
+        </td>
+        <tr>
+            <td>
+                <font color="5288F8">
+                    <b>
+                        Giovani Bautista
+                    </b>
+                </font>
+            </td>
+        </tr>
+        <i>
+            Media Studies/Chicano Studies
+        </i>
+        <b>
+            Oxnard, CA
+        </b>
+        <a href="http://eop.berkeley.edu/giovani-bautista" target="_blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Paola A. Mora Paredes
+                </b>
+            </font>
+        </td>
+        <i>
+            Social Welfare
+        </i>
+        <b>
+            Santa Ana, CA
+        </b>
+        <a href="http://eop.berkeley.edu/paola-paredes" target="blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Ricky Muniz
+                </b>
+            </font>
+        </td>
+        <i>
+            Public Health/Psychology Education
+        </i>
+        <b>
+            Salinas, CA
+        </b>
+        <a href="http://eop.berkeley.edu/ricky-muniz" target="blank">
+            View full Profile
+        </a>
+        <td>
+            <font color="5288F8">
+                <b>
+                    Daniela Miramontes
+                </b>
+            </font>
+        </td>
+        <i>
+            American Studies
+        </i>
+        <b>
+            Sylmar, CA
+        </b>
+        <a href="http://eop.berkeley.edu/daniela-miramontes" target="blank">
+            View full Profile
+        </a>-->
+    </body>
+</html>

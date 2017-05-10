@@ -1,0 +1,193 @@
+<html>
+<head>
+<title>UC Berkeley Color Palette</title>
+</head>
+    <body>
+        <!-- Bootstrap Grid Framework -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+        <!-- Edit code where comments tell you to (a little below here)  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script>
+            var app = angular.module("color-chooser", []);
+            app.controller("color-chooser-controller", function($scope) {
+                $scope.colors = [
+                    {
+                        "name": "Berkeley Blue",
+                        "hex": "#003262"
+                    },
+                    {
+                        "name": "Founder’s Rock",
+                        "hex": "#3B7EA1"
+                    },
+                    {
+                        "name": "California Gold",
+                        "hex": "#FDB515"
+                    },
+                    {
+                        "name": "Medalist",
+                        "hex": "#C4820E"
+                    },
+                    {
+                        "name": "Wellman Tile",
+                        "hex": "#D9661F"
+                    },
+                    {
+                        "name": "Rose Garden",
+                        "hex": "#EE1F60"
+                    },
+                    {
+                        "name": "Golden Gate",
+                        "hex": "#ED4E33"
+                    },
+                    {
+                        "name": "South Hall",
+                        "hex": "#6C3302"
+                    },
+                    {
+                        "name": "Bay Fog",
+                        "hex": "#DDD5C7"
+                    },
+                    {
+                        "name": "Lawrence",
+                        "hex": "#00B0DA"
+                    },
+                    {
+                        "name": "Lap Lane",
+                        "hex": "#00A598"
+                    },
+                    {
+                        "name": "Pacific",
+                        "hex": "#46535E"
+                    },
+                    {
+                        "name": "Sather Gate",
+                        "hex": "#B9D3B6"
+                    },
+                    {
+                        "name": "Ion",
+                        "hex": "#CFDD45"
+                    },
+                    {
+                        "name": "Soybean",
+                        "hex": "#859438"
+                    },
+                    {
+                        "name": "Stone Pine",
+                        "hex": "#584F29"
+                    },
+                ];
+
+                $scope.primaryColor = "#003262";
+                $scope.secondaryColor = "#FDB515";
+
+                $scope.changeColor = function(isMouseEnter){
+                    if (isMouseEnter){
+                        $scope.linkColor = {'color': $scope.secondaryColor};
+                    }
+                    else{
+                        $scope.linkColor = {'color': 'white'};
+                    }
+                };
+            });
+        </script>
+
+        <div ng-app="color-chooser" ng-controller="color-chooser-controller">
+
+
+
+
+
+
+            <!-- Bootstrap Grid Framework -->
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+            <!-- Custom Styling -->
+            <style>
+                #custom_header{
+                    width: 100%;
+                    height: 70px;
+                    padding: 10px 0px;
+                    background-color: #003262;
+                }
+                hr{
+                    border-color: inherit;
+                    color: #555;
+                    margin: 10px 0px;
+                }
+                #custom_header .container{
+                    height: 100%;
+                }
+                #custom_header #logo{
+                    max-height: 100%;
+                }
+                #custom_header .nav-item{
+                    color: white;
+                    display: inline-block;
+                    padding: 0px 30px;
+                    transition: color 0.2s;
+                }
+                #custom_header .nav-item:hover{
+                }
+            </style>
+            <!-- HTML -->
+            <div id="custom_header" ng-style="{'background-color': primaryColor}">
+                <div class="container">
+                    <img id="logo" src="http://julian-ledesma.squarespace.com/s/eopbanner.png"></img>
+                    <a href=""><div class="nav-item" ng-style="{'color': white}">Original Color</div></a>
+                    <a href=""><div class="nav-item" ng-style="{'color': secondaryColor}">Secondary Color</div></a>
+                    <a href="" ng-mouseenter="changeColor(true)" ng-mouseleave="changeColor(false)"><div class="nav-item" ng-style="linkColor">Demo Link 1</div></a>
+                    <a href="" ng-mouseenter="changeColor(true)" ng-mouseleave="changeColor(false)"><div class="nav-item" ng-style="linkColor">Demo Link 2</div></a>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="container" style="margin-top: 30px">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div style="height:100px;width:100px;border:1px solid black;color:#DDD;" ng-style="{'background-color': primaryColor}">{{primaryColor}}</div>
+                        <h2>Primary Color</h2>
+                        <form>
+                          <div ng-repeat="color in colors">
+                              <input type="radio" name="primaryColor" ng-model="$parent.primaryColor" ng-value="color.hex">
+                                {{color.name}}
+                              </input>
+                          </div>
+                          <input type="text" ng-model="primaryColor" style="margin-top: 20px" placeholder="Custom Color Input"/>
+                        </form>
+                    </div>
+                    <div class="col-sm-3">
+                        <div style="height:100px;width:100px;border:1px solid black;color:#DDD;" ng-style="{'background-color': secondaryColor}">{{secondaryColor}}</div>
+                        <h2>Secondary Color</h2>
+                        <form>
+                          <div ng-repeat="color in colors"><input type="radio" name="secondaryColor" ng-model="$parent.secondaryColor" ng-value="color.hex"> {{color.name}}</input></div>
+                          <input type="text" ng-model="secondaryColor" style="margin-top: 20px" placeholder="Custom Color Input"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="padding-top: 10px"></div>
+                    About: All these colors are from the UC Berkeley branding guidelines. This website helps you choose what colors to use. This web-app is made with AngularJS. Originally made when redesigning <a href="http://eop.berkeley.edu">UC Berkeley's EOP Website</a>
+                    <div style="padding-top: 50px"></div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
+            body{
+                font-family: "Open Sans";
+                font-size: 16px;
+            }
+            h2{
+                font-size: 23px;
+                font-family: "Roboto Slab";
+            }
+            h3{
+                font-size: 18px;
+                font-family: "Roboto Slab";
+            }
+        </style>
+    </body>
+</html>
