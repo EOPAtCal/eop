@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="intranet for EOP Berkeley" content="">
+    <meta name="Samuel K. Mbaabu" content="">
+
+    <title>CE3 Intranet System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Intranet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">People</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="wrapper" class="toggled">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                  <a href="#">
+                      My Account
+                  </a>
+              </li>
+              <li>
+                  <a href="dashboard.html" id="active_nav">Dashboard</a>
+              </li>
+              <li>
+                  <a href="services.html">Services</a>
+              </li>
+              <li>
+                  <a href="requests.html">Requests</a>
+              </li>
+              <li>
+                  <a href="profile.html">Profile</a>
+              </li>
+              <li>
+                  <a href="http://www.erso.berkeley.edu/erso/content/quick-links" target="blank">Help & Training</a>
+              </li>
+          </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+          <div class="container-fluid">
+              <h1>Dashboard</h1>
+              <hr>
+              <div class="row text-center">
+                <div class="col-md-4">
+                <small>Submissions</small>
+                <h1>9</h1>
+                </div>
+                <div class="col-md-4">
+                <small>Approved</small>
+                <h1>5</h1>
+                </div>
+                <div class="col-md-4">
+                <small>Pending</small>
+                <h1>14</h1>
+                </div>
+              </div>
+              <hr>
+              <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+              <p class="lead">Submit New Reimbursment Form </p>
+              <a href="services.html" class="btn btn-secondary btn-block btn-color">Start</a>
+          </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-inverse">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; CE3 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+  </body>
+
+</html>
