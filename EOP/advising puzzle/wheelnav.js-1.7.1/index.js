@@ -45,7 +45,6 @@ var data = `
               }
             ]
             `
-
 function shorten(text, maxLength) {
     var ret = text;
     if (ret.length > maxLength) {
@@ -107,16 +106,14 @@ window.onload = function() {
 
     var wheel = new wheelnav("wheelDiv");
     wheel.slicePathFunction = slicePath().DonutSlice;
-    wheel.colors = colorpalette.fractallove
     wheel.markerEnable = true;
     wheel.markerPathFunction = markerPath().DropMarker;
     wheel.markerAttr = {
         fill: '#333',
         stroke: '#333'
     };
-
+    wheel.colors = colorpalette.cal
     wheel.createWheel(titles);
-
     wheel.titleAttr = {
         fill: "#333"
     };

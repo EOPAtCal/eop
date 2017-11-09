@@ -3952,5 +3952,6 @@ var colorpalette = {
     fractallove: new Array("#002EFF", "#00FFF7", "#00FF62", "#FFAA00", "#F5D908", "#FF0000", "#FF00F3", "#AA00FF"),
     sprinkles: new Array("#272523", "#FFACAC", "#FFD700", "#00590C", "#08006D"),
     goldenyellow: new Array("#D8B597", "#8C4006", "#B6690F", "#E3C57F", "#FFEDBE"),
-    hotaru: new Array("#364C4A", "#497C7F", "#92C5C0", "#858168", "#CCBCA5")
+    hotaru: new Array("#364C4A", "#497C7F", "#92C5C0", "#858168", "#CCBCA5"),
+    cal: new Array("#00B0DA", "#00A598", "#3B7EA1", "#FDB515", "#C4820E", "#D9661F", "#EE1F60", "#ED4E33", "#6C3302") // UC Berkeley
 };
