@@ -86,43 +86,43 @@
                       {
                         "title": "college advisor",
                         "text": "College advisors build relationships with students to understand their particular needs and focus on their academic & career goals.  Their primary role is to support students with general program planning and academic advising while making appropriate referrals to student services, faculty and enrichment opportunities.  College advisors also assist students in navigating college policies such as degree requirements, deadlines, unit limits, academic holds, withdrawals and more.",
-                        "img": "images/1.png",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0251fc4192021db9d29abb/1510101504587/CollegeAdvisor.png?format=300w",
                         "link": "http://www.eop.berkeley.edu/advising/college-advisor"
                       },
                       {
                         "title": "educational opportunity program",
                         "text": "The Educational Opportunity Program (EOP) serves undergraduate students who are first-generation, low-income, and/or underrepresented students. EOP Academic Counselors can support you with academic planning, financial assistance, graduate school / career exploration and building community at UC Berkeley.  The quickest way to verify your EOP eligibility is by contact our front office at 510.642.7224 or visiting 119 Chavez.  You can also apply online through our website below.",
-                        "img": "images/2.jpg",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0260a324a69476e0d1c00a/1510105268698/EOPAdvising.jpg?format=500w",
                         "link": "http://www.eop.berkeley.edu/advising/eop"
                       },
                       {
                         "title": "cal student central",
                         "text": "Cal Student Central (CSC) is a one-stop resource that includes the Office of Financial Aid & Scholarships, Office of the Registrar and Billing & Payment Services. CSC helps students understand their student budget, financial aid package (loans, grants/scholarships and work-study), appeals processes, etc.   Additionally, CSC assists students with billing/payment inquiries, transcripts, enrollment verifications, residency and more.",
-                        "img": "images/3.png",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0252169140b7456e42a4c1/1510101531058/CalStudentCentral.png?format=500w",
                         "link": "http://www.eop.berkeley.edu/advising/cal-student-central"
                       },
                       {
                         "title": "major advisor",
                         "text": "A Major Advisor is a department specialist who assists students in planning their academic schedule in preparation to declare and/or graduate from the desired major within a college. Students can meet with their Major Advisor to discuss questions specific to their major prerequisites or upper division requirements. Major advisors can be located by following the links below:",
-                        "img": "images/4.jpg",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0252f29140b7456e42cc8a/1510104639888/MajorAdvising.jpg?format=500w",
                         "link": "http://www.eop.berkeley.edu/advising/major-advisor"
                       },
                       {
                         "title": "faculty advisor",
                         "text": "Faculty advisors serve as academic/professional mentors who support students in engaging further in their academic discipline. These advisors expose students to potential career paths, internship opportunities, write letters of recommendation and can serve as a thesis advisor. Not all departments have faculty advisors; view the list of faculty advisors below.",
-                        "img": "images/5.jpg",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0252cbe4966b0fcddcf0ca/1510101708761/FacultyAdvisor.jpg?format=300w",
                         "link": "http://www.eop.berkeley.edu/advising/faculty-advisor"
                       },
                       {
                         "title": "peer advisors",
                         "text": "Peer Advisors are current students who use their personal experience to provide student-to-student advising and mentoring about several topics including:",
-                        "img": "images/6.jpg",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a02527024a69476e0cf3e6c/1510101618055/PeerAdvising.jpg?format=750w",
                         "link": "http://www.eop.berkeley.edu/advising/peer-advisors"
                       },
                       {
                         "title": "additional advising resources",
                         "text": "Centers for Educational Equity & Excellence, Career Center, Study Abroad, Fall Program for Freshman, LEAD Center, Office of Undergraduate Research & Scholarships",
-                        "img": "images/7.jpg",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a025b22652dea4ceb32a86e/1510103850032/Additional+Resources+copy.jpg?format=500w",
                         "link": "http://www.eop.berkeley.edu/advising/additional-resources"
                       }
                     ]
@@ -154,7 +154,7 @@
         function render(items) {
             if (items.length === texts.length) {
                 for (var i = items.length - 1; i >= 0; i--) {
-                    texts[i]["text"] = shorten(texts[i]["text"], 120);
+                    texts[i]["text"] = shorten(texts[i]["text"], 100);
                     items[i].navigateFunction = displayText(i);
                 }
             }
