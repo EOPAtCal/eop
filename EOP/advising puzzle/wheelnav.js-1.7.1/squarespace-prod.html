@@ -200,6 +200,8 @@
             var wheel = new wheelnav("wheelDiv");
             wheel.slicePathFunction = slicePath().DonutSlice;
             wheel.markerEnable = true;
+            wheel.animateeffect = 'ease';
+            wheel.animatetime = 1200;
             wheel.markerPathFunction = markerPath().DropMarker;
             wheel.markerAttr = {
                 fill: '#333',
