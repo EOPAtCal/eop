@@ -164,21 +164,15 @@
         function render(items) {
             if (items.length === texts.length) {
                 for (var i = items.length - 1; i >= 0; i--) {
-                    texts[i]["text"] = shorten(texts[i]["text"], 100);
+                    texts[i]["text"] = shorten(texts[i]["text"], 120);
                     items[i].navigateFunction = displayText(i);
                 }
             }
 
         }
 
-        function getRandomIntInclusive(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
         function renderDefault() {
-            var ind = getRandomIntInclusive(0, texts.length - 1)
+            var ind = 0
             document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
             document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
             document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
@@ -201,13 +195,14 @@
             wheel.slicePathFunction = slicePath().DonutSlice;
             wheel.markerEnable = true;
             wheel.animateeffect = 'ease';
-            wheel.animatetime = 1200;
+            wheel.animatetime = 800;
             wheel.markerPathFunction = markerPath().DropMarker;
             wheel.markerAttr = {
                 fill: '#333',
                 stroke: '#333'
             };
             wheel.colors = colorpalette.cal
+            wheel.titleFont = "400 20px sans-serif";
             wheel.createWheel(titles);
             wheel.titleAttr = {
                 fill: "#333"
@@ -220,8 +215,8 @@
             };
 
             render(wheel.navItems);
-            wheel.refreshWheel();
             renderDefault();
+            wheel.refreshWheel();
         };
         
     </script>
