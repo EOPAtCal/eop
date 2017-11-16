@@ -12,8 +12,8 @@
         }
 
         #wheelDiv {
-            height: 560px;
-            width: 560px;
+            height: 485px;
+            width: 485px;
         }
 
         #wheelDiv>svg {
@@ -40,8 +40,8 @@
 
         @media (min-width: 1200px) {
             #wheelDiv {
-                height: 700px;
-                width: 700px;
+                height: 584px;
+                width: 584px;
             }
             
         }
@@ -69,10 +69,10 @@
                 </div>
                 <div class="float-right">
                     <div id="text-preview">
-                        <div class="card" style="width: 27rem;">
+                        <div class="card" style="width: 26rem;">
                           <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
                           <div class="card-block">
-                            <h4 class="card-title text-capitalize" id="custom-h4"></h4>
+                            <h3 class="card-title text-capitalize" id="custom-h4"></h3>
                             <p class="card-text" id="custom-text"></p>
                             <div>
                                 <a href="#" id="custom-button" class="btn btn-primary" target="blank">Learn More</a>
@@ -124,16 +124,16 @@
                         "link": "http://www.eop.berkeley.edu/advising/peer-advisors"
                       },
                       {
+                        "title": "disabled students program",
+                        "text": "DSP currently serves more than 1,600 undergraduate and graduate students enrolled at UC Berkeley. While many people assume that students with disabilities are mostly visibly physically disabled, at present the majority of students receiving our services have invisible disabilities. These students have learning or psychological disabilities and often do not traditionally identify as people with disabilities at all (although some do).  DSP helps students with disabilities navigate that system by establishing a set of academic accommodations based on each students’ individual disability.",
+                        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a0ccb99f9619a9983cb7301/1510787995750/8.jpg?format=1000w",
+                        "link": "http://www.eop.berkeley.edu/advising/disabled-students-program"
+                      },
+                      {
                         "title": "additional advising resources",
                         "text": "Centers for Educational Equity & Excellence, Career Center, Study Abroad, Fall Program for Freshman, LEAD Center, Office of Undergraduate Research & Scholarships",
                         "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5a025b22652dea4ceb32a86e/1510103850032/Additional+Resources+copy.jpg?format=500w",
                         "link": "http://www.eop.berkeley.edu/advising/additional-resources"
-                      },
-                      {
-                        "title": "disabled students program",
-                        "text": "DSP currently serves more than 1,600 undergraduate and graduate students enrolled at UC Berkeley. While many people assume that students with disabilities are mostly visibly physically disabled, at present the majority of students receiving our services have invisible disabilities. These students have learning or psychological disabilities and often do not traditionally identify as people with disabilities at all (although some do).  DSP helps students with disabilities navigate that system by establishing a set of academic accommodations based on each students’ individual disability.",
-                        "img": "https://dsp.berkeley.edu/sites/default/files/memorialglade_600_zhukova.jpg",
-                        "link": "http://www.dsp.berkeley.edu/"
                       }
                     ]
                     `
@@ -186,7 +186,6 @@
         }
 
         window.onload = function() {
-            //This is the place for code snippets from the documentation -> http://wheelnavjs.softwaretailoring.net/documentation.html
             var titles = [
                 "College \n Advisor",
                 "Educational \n Opportunity \n Program",
@@ -194,8 +193,8 @@
                 "Major \n Advisor",
                 "Faculty \n Advisor",
                 "Peer \n Advisors",
-                "Additional \n Resources",
-                "Disabled \n Students \n Program"
+                "Disabled \n Students \n Program",
+                "Additional \n Resources"
             ]
 
             var wheel = new wheelnav("wheelDiv");
