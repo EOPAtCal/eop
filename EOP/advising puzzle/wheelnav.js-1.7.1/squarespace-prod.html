@@ -38,10 +38,16 @@
             background-color: #E7E7E7;
         }
 
+        @media (min-width: 768px) {
+            .row {
+                margin-bottom: -52px;
+            }
+        }
+
         @media (min-width: 1200px) {
             #wheelDiv {
-                height: 584px;
-                width: 584px;
+                height: 574px;
+                width: 574px;
             }
             
         }
@@ -164,7 +170,7 @@
         function render(items) {
             if (items.length === texts.length) {
                 for (var i = items.length - 1; i >= 0; i--) {
-                    texts[i]["text"] = shorten(texts[i]["text"], 120);
+                    texts[i]["text"] = shorten(texts[i]["text"], 98);
                     items[i].navigateFunction = displayText(i);
                 }
             }
