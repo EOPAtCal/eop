@@ -26,7 +26,7 @@
         }
 
         #custom-button {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             padding:  0.8rem 2.2rem;
         }
 
@@ -200,15 +200,14 @@
             var wheel = new wheelnav("wheelDiv");
             wheel.slicePathFunction = slicePath().DonutSlice;
             wheel.markerEnable = true;
-            wheel.animateeffect = 'ease';
-            wheel.animatetime = 800;
+            wheel.animatetime = 690;
             wheel.markerPathFunction = markerPath().DropMarker;
             wheel.markerAttr = {
                 fill: '#333',
                 stroke: '#333'
             };
             wheel.colors = colorpalette.cal
-            wheel.titleFont = "400 20px sans-serif";
+            wheel.titleFont = '100 23px Impact, Charcoal, sans-serif';
             wheel.createWheel(titles);
             wheel.titleAttr = {
                 fill: "#333"
