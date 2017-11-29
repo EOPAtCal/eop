@@ -1,92 +1,90 @@
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/EOPAtCal/js@v0.1/squarespace.js"></script>
-    <style>
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-        }
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/EOPAtCal/js@v0.1/squarespace.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.1/bootstrap-iso.css">
+<style>
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
 
-        #wheelDiv {
-            height: 485px;
-            width: 485px;
-        }
+#wheelDiv {
+    height: 485px;
+    width: 485px;
+}
 
-        #wheelDiv>svg {
-            height: 100%;
-            width: 100%;
-        }
+#wheelDiv>svg {
+    height: 100%;
+    width: 100%;
+}
 
-        #custom-h4 {
-            font-size: 2.2rem;
-        }
+#custom-h4 {
+    font-size: 2.2rem;
+}
 
-        #custom-button {
-            font-size: 1.4rem;
-            padding:  0.8rem 2.2rem;
-        }
+#custom-button {
+    font-size: 1.4rem;
+    padding: 0.8rem 2.2rem;
+}
 
-        #custom-text {
-            font-size:  1.4rem;
-        }
+#custom-text {
+    font-size: 1.4rem;
+}
 
-        @media (min-width: 768px) {
-            #wheelRow {
-                margin-bottom: -52px;
-            }
-        }
+@media (min-width: 768px) {
+    #wheelRow {
+        margin-bottom: -52px;
+    }
+}
 
-        @media (min-width: 1200px) {
-            #wheelDiv {
-                height: 574px;
-                width: 574px;
-            }
-            
-        }
+@media (min-width: 1200px) {
+    #wheelDiv {
+        height: 574px;
+        width: 574px;
+    }
+}
 
-        @media (max-width: 992px) {
-            #wheelDiv {
-                height: 450px;
-                width: 450px;
-            }
-        }
+@media (max-width: 992px) {
+    #wheelDiv {
+        height: 450px;
+        width: 450px;
+    }
+}
 
-        @media (max-width: 576px) {
-            #wheelDiv {
-                height: 400px;
-                width: 400px;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.1/bootstrap-iso.css">
-        <div class="bootstrap-iso">
-            <div class="row align-items-center justify-content-center" id="wheelRow">
-                <div class="float-left">
-                    <div id="wheelDiv">
-                    </div>
-                </div>
-                <div class="float-right">
-                    <div id="text-preview">
-                        <div class="card" style="width: 26rem;">
-                          <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
-                          <div class="card-block">
-                            <h3 class="card-title text-capitalize" id="custom-h4"></h3>
-                            <p class="card-text" id="custom-text"></p>
-                            <div>
-                                <a href="#" id="custom-button" class="btn btn-primary" target="blank">Learn More</a>
-                            </div>
-                          </div>
+@media (max-width: 576px) {
+    #wheelDiv {
+        height: 400px;
+        width: 400px;
+    }
+}
+</style>
+<div class="bootstrap-iso">
+    <div class="row align-items-center justify-content-center" id="wheelRow">
+        <div class="float-left">
+            <div id="wheelDiv">
+            </div>
+        </div>
+        <div class="float-right">
+            <div id="text-preview">
+                <div class="card" style="width: 26rem;">
+                    <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
+                    <div class="card-block">
+                        <h3 class="card-title text-capitalize" id="custom-h4"></h3>
+                        <p class="card-text" id="custom-text"></p>
+                        <div>
+                            <a href="#" id="custom-button" class="btn btn-primary" target="blank">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <script type="text/javascript">
-        "use strict"
-        var data = `
+    </div>
+</div>
+<script type="text/javascript">
+"use strict"
+var data = `
                     [
                       {
                         "title": "college advisor",
@@ -138,88 +136,88 @@
                       }
                     ]
                     `
-        function shorten(text, maxLength) {
-            var ret = text;
-            if (ret.length > maxLength) {
-                ret = ret.substr(0, maxLength);
-                ret = ret.substr(0, Math.min(ret.length, ret.lastIndexOf(" "))) + "...";
-            }
-            return ret;
+
+function shorten(text, maxLength) {
+    var ret = text;
+    if (ret.length > maxLength) {
+        ret = ret.substr(0, maxLength);
+        ret = ret.substr(0, Math.min(ret.length, ret.lastIndexOf(" "))) + "...";
+    }
+    return ret;
+}
+
+function getData(data) {
+    return JSON.parse(data);
+}
+
+var texts = getData(data);
+
+function displayText(ind) {
+    return function() {
+        document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
+        document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
+        document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
+        document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
+    }
+}
+
+function render(items) {
+    if (items.length === texts.length) {
+        for (var i = items.length - 1; i >= 0; i--) {
+            texts[i]["text"] = shorten(texts[i]["text"], 98);
+            items[i].navigateFunction = displayText(i);
         }
+    }
 
-        function getData(data) {
-            return JSON.parse(data);
-        }
+}
 
-        var texts = getData(data);
+function renderDefault() {
+    var ind = 0
+    document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
+    document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
+    document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
+    document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
+}
 
-        function displayText(ind) {
-            return function() {
-                document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
-                document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
-                document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
-                document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
-            }
-        }
+window.onload = function() {
+    var titles = [
+        "College \n Advisor",
+        "Educational \n Opportunity \n Program",
+        "Cal Student \n Central",
+        "Major \n Advisor",
+        "Faculty \n Advisor",
+        "Peer \n Advisors",
+        "Disabled \n Students \n Program",
+        "Additional \n Resources"
+    ]
 
-        function render(items) {
-            if (items.length === texts.length) {
-                for (var i = items.length - 1; i >= 0; i--) {
-                    texts[i]["text"] = shorten(texts[i]["text"], 98);
-                    items[i].navigateFunction = displayText(i);
-                }
-            }
+    var wheel = new wheelnav("wheelDiv");
+    wheel.slicePathFunction = slicePath().DonutSlice;
+    wheel.markerEnable = true;
+    wheel.animatetime = 690;
+    wheel.markerPathFunction = markerPath().DropMarker;
+    wheel.markerAttr = {
+        fill: '#333',
+        stroke: '#333'
+    };
+    wheel.colors = colorpalette.cal
+    wheel.titleFont = '100 23px Impact, Charcoal, sans-serif';
+    wheel.createWheel(titles);
+    wheel.titleAttr = {
+        fill: "#333"
+    };
+    wheel.titleSelectedAttr = {
+        fill: "#FFF"
+    };
+    wheel.titleHoverAttr = {
+        fill: "#FFF"
+    };
 
-        }
-
-        function renderDefault() {
-            var ind = 0
-            document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
-            document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
-            document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
-            document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
-        }
-
-        window.onload = function() {
-            var titles = [
-                "College \n Advisor",
-                "Educational \n Opportunity \n Program",
-                "Cal Student \n Central",
-                "Major \n Advisor",
-                "Faculty \n Advisor",
-                "Peer \n Advisors",
-                "Disabled \n Students \n Program",
-                "Additional \n Resources"
-            ]
-
-            var wheel = new wheelnav("wheelDiv");
-            wheel.slicePathFunction = slicePath().DonutSlice;
-            wheel.markerEnable = true;
-            wheel.animatetime = 690;
-            wheel.markerPathFunction = markerPath().DropMarker;
-            wheel.markerAttr = {
-                fill: '#333',
-                stroke: '#333'
-            };
-            wheel.colors = colorpalette.cal
-            wheel.titleFont = '100 23px Impact, Charcoal, sans-serif';
-            wheel.createWheel(titles);
-            wheel.titleAttr = {
-                fill: "#333"
-            };
-            wheel.titleSelectedAttr = {
-                fill: "#FFF"
-            };
-            wheel.titleHoverAttr = {
-                fill: "#FFF"
-            };
-
-            render(wheel.navItems);
-            renderDefault();
-            wheel.refreshWheel();
-        };
-        
-    </script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    render(wheel.navItems);
+    renderDefault();
+    wheel.refreshWheel();
+};
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
