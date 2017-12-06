@@ -1,1 +1,12 @@
-$primary-color: color("light-blue", "darken-3")
+#cover-image { 
+	background: url("https://cdn2.webdamdb.com/1280_0K4oRQiInmob.jpg?1457389425%22") no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-height: 100%;
+  min-height: 200px;
+  min-width: 200px;
+  max-width: 100%;
+  height: 320px;
+}
