@@ -10,8 +10,8 @@ body {
 }
 
 #wheelDiv {
-    height: 500px;
-    width: 500px;
+    height: 490px;
+    width: 490px;
 }
 
 #wheelDiv>svg {
@@ -20,25 +20,28 @@ body {
 }
 
 #text-preview {
-    min-width: 12rem;
-    max-width: 24rem;
+    max-width: 20rem;
 }
 
 .card-img-top {
-    max-height: 18rem;
+    max-height: 16rem;
+}
+
+#left-side {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+    #wheelDiv {
+        height: 590px;
+        width:  590px;
+    }
 }
 
 @media (max-width: 768px) {
     #left-side {
         justify-content: center !important;
-    }
-}
-
-
-@media (min-width: 1200px) {
-    #wheelDiv {
-        height: 640px;
-        width: 640px;
+        margin-bottom: 1.6rem;
     }
 }
 
@@ -55,15 +58,20 @@ body {
         width: 400px;
     }
 }
+/*page overrides*/
+#footer > .wrapper {
+    height: 0px;
+    padding: 0px 30px;
+}
 </style>
 <div class="bootstrap-iso">
     <div class="row">
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="col-md-8 d-flex justify-content-center">
             <div id="wheelDiv">
             </div>
         </div>
-        <div class="col-md-6 d-flex align-items-center" id="left-side">
-            <div id="text-preview">
+        <div class="col-md-4 d-flex" id="left-side">
+            <div id="text-preview" class="d-flex align-self-center">
                 <div class="card">
                     <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
                     <div class="card-block">
@@ -77,7 +85,6 @@ body {
             </div>
         </div>
     </div>
-    <br>
     <div class="row">
         <p>
             At times, UC Berkeley can feel a bit overwhelming as students are learning to navigate the university in many ways. There are various advising units on campus that deliver unique support and, in some instances, reinforce standard advising practices. Advising is an essential resource that offers students academic/personal guidance, critical information, clarification on policies, and the opportunity to develop solutions and action plans. Advisors are invested in your success and are here to partner with you to help you get the most out of your time at UC Berkeley and prepare you for success after graduation. This “advising wheel” can assist you in learning about the many advising units on campus and how they can best meet your individual and ever evolving needs.
@@ -204,7 +211,7 @@ window.onload = function() {
         stroke: '#333'
     };
     wheel.colors = colorpalette.cal
-    wheel.titleFont = '100 23px Impact, Charcoal, sans-serif';
+    wheel.titleFont = '100 22px Impact, Charcoal, sans-serif';
     wheel.createWheel(titles);
     wheel.titleAttr = {
         fill: "#333"
