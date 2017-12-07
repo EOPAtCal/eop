@@ -19,6 +19,11 @@ body {
     width: 100%;
 }
 
+#text-preview {
+    min-width: 12rem;
+    max-width: 24rem;
+}
+
 @media (min-width: 1200px) {
     #wheelDiv {
         height: 550px;
@@ -41,14 +46,14 @@ body {
 }
 </style>
 <div class="bootstrap-iso">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-lg-6">
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center">
             <div id="wheelDiv">
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6 d-flex justify-content-center">
             <div id="text-preview">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                     <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
                     <div class="card-block">
                         <h3 class="card-title text-capitalize"></h3>
