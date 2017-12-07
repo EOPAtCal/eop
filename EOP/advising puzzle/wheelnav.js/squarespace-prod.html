@@ -10,8 +10,8 @@ body {
 }
 
 #wheelDiv {
-    height: 485px;
-    width: 485px;
+    height: 500px;
+    width: 500px;
 }
 
 #wheelDiv>svg {
@@ -24,17 +24,28 @@ body {
     max-width: 24rem;
 }
 
+.card-img-top {
+    max-height: 18rem;
+}
+
+@media (max-width: 768px) {
+    #left-side {
+        justify-content: center !important;
+    }
+}
+
+
 @media (min-width: 1200px) {
     #wheelDiv {
-        height: 550px;
-        width: 550px;
+        height: 640px;
+        width: 640px;
     }
 }
 
 @media (max-width: 992px) {
     #wheelDiv {
-        height: 450px;
-        width: 450px;
+        height: 470px;
+        width: 470px;
     }
 }
 
@@ -47,11 +58,11 @@ body {
 </style>
 <div class="bootstrap-iso">
     <div class="row">
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
             <div id="wheelDiv">
             </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6 d-flex align-items-center" id="left-side">
             <div id="text-preview">
                 <div class="card">
                     <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
