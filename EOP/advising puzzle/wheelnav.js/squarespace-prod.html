@@ -3,8 +3,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/EOPAtCal/js@v0.1/squarespace.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.1/bootstrap-iso.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 <style>
 body {
     font-family: Helvetica, Arial, sans-serif;
@@ -18,16 +17,6 @@ body {
 #wheelDiv>svg {
     height: 100%;
     width: 100%;
-}
-
-#custom-button {
-    padding: 0.8rem 2.2rem;
-}
-
-@media (min-width: 768px) {
-    #wheelRow {
-        margin-bottom: -52px;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -52,20 +41,20 @@ body {
 }
 </style>
 <div class="bootstrap-iso">
-    <div class="row align-items-center justify-content-center" id="wheelRow">
-        <div class="float-left">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6">
             <div id="wheelDiv">
             </div>
         </div>
-        <div class="float-right">
+        <div class="col-lg-6">
             <div id="text-preview">
-                <div class="card" style="width: 26rem;">
+                <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
                     <div class="card-block">
                         <h3 class="card-title text-capitalize"></h3>
                         <p class="card-text"></p>
                         <div>
-                            <a href="#" id="custom-button" class="btn btn-primary" target="blank">Learn More</a>
+                            <a href="#" class="btn btn-primary" target="blank">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +62,13 @@ body {
         </div>
     </div>
     <br>
+    <div class="row">
+        <p>
+            At times, UC Berkeley can feel a bit overwhelming as students are learning to navigate the university in many ways. There are various advising units on campus that deliver unique support and, in some instances, reinforce standard advising practices. Advising is an essential resource that offers students academic/personal guidance, critical information, clarification on policies, and the opportunity to develop solutions and action plans. Advisors are invested in your success and are here to partner with you to help you get the most out of your time at UC Berkeley and prepare you for success after graduation. This “advising wheel” can assist you in learning about the many advising units on campus and how they can best meet your individual and ever evolving needs.
+        </p>
+    </div>
 </div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/EOPAtCal/js@v0.1/squarespace.js"></script>
 <script type="text/javascript">
 "use strict"
 var data = `
