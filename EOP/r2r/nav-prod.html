@@ -38,8 +38,12 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function() {
-    var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + location.pathname.split("/r2r/")[1] + '"]';
-    console.log(selector)
+    if (location.pathname.endsWith('/r2r') || location.pathname.endsWith('/r2r/')) {
+        var selector = '.bootstrap-iso > ul > li > a[href="/r2r"]';
+    } else {
+        path = location.pathname.split("/r2r/")[1]
+        var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + path + '"]';
+    }
     $(selector).addClass('active');
 });
 </script>
