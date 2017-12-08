@@ -21,8 +21,12 @@ body {
     border-color: #0059AF !important;
 }
 
-.sqs-block-button .sqs-block-button-element {
-    color: #0059AF !important;
+.sqs-block-button .sqs-block-button-element,
+.sqs-block-button .sqs-block-button-element--small,
+.sqs-block-button .sqs-block-button-element--medium,
+.sqs-block-button .sqs-block-button-element--large {
+    color: #fff !important;
+    background-color: #0059AF !important;
     border-color: #0059AF !important;
 }
 
@@ -53,8 +57,6 @@ h5 a:hover,
 h6 a:hover {
     color: #e6830a;
 }
-
-
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
