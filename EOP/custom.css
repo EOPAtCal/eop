@@ -21,6 +21,11 @@ body {
     border-color: #0059AF !important;
 }
 
+.sqs-block-button .sqs-block-button-element {
+    color: #0059AF !important;
+    border-color: #0059AF !important;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -48,6 +53,7 @@ h5 a:hover,
 h6 a:hover {
     color: #e6830a;
 }
+
 
 
 /*!
