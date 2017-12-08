@@ -1,7 +1,7 @@
 <div class="bootstrap-iso">
     <ul class="nav nav-pills justify-content-center align-items-center text-capitalize">
         <li class="nav-item">
-            <a class="nav-link active" href="/r2r">Home</a>
+            <a class="nav-link" href="/r2r">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/r2r/academic-probation">Academic Probation</a>
@@ -19,6 +19,11 @@
 </div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 <style type="text/css" media="screen">
+.bootstrap-iso ul {
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+}
+
 .bootstrap-iso ul>li>a:hover,
 .bootstrap-iso .nav-pills .nav-link.active {
     color: #fff !important;
@@ -30,3 +35,11 @@
     border-radius: 0 !important;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function() {
+    var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + location.pathname.split("/r2r/")[1] + '"]';
+    console.log(selector)
+    $(selector).addClass('active');
+});
+</script>
