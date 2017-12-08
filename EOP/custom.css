@@ -6,6 +6,12 @@ body {
     background-color: #fff !important;
 }
 
+.bootstrap-iso .btn-outline-primary {
+    color: #0059AF !important;
+    border-color: #0059AF !important;
+}
+
+.bootstrap-iso .btn-outline-primary:hover,
 .sqs-block-button .sqs-block-button-element,
 .sqs-block-button .sqs-block-button-element--small,
 .sqs-block-button .sqs-block-button-element--medium,
@@ -18,9 +24,11 @@ body {
 * {
     box-sizing: border-box;
 }
-.bootstrap-iso > .btn {
+
+.bootstrap-iso .btn {
     border-radius: 0 !important;
 }
+
 
 h1 a:link,
 h2 a:link,
@@ -45,6 +53,8 @@ h5 a:hover,
 h6 a:hover {
     color: #e6830a;
 }
+
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2017 Twitter, Inc.
