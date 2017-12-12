@@ -1,3 +1,4 @@
+<!-- start of header -->
 <div class="header">
     <div class="mcnair_header">
         <a href="/miller">
@@ -22,23 +23,15 @@
     font-weight: 400;
     font-style: normal;
     font-size: 35px;
-    padding: 15px;
 }
 
 .mcnair_header img {
     width: 650px;
 }
 </style>
-<!--
-<div class="main_image">
-  <img src="https://github.com/EOPAtCal/mcnairscholarsprogram/blob/master/miller_scholars_group_fb_banner_0.jpg?raw=true">
-</div>
--->
-<style>
-.main_image img {
-    width: 100%;
-}
-</style>
+<!-- end of header -->
+
+<!-- start of nav -->
 <div class="dropdown_menu">
     <div class="dropdown">
         <button class="dropbtn">
@@ -105,7 +98,6 @@
 }
 
 .dropbtn a {
-    padding: 16px;
     color: #003262;
     width: 100%;
     height: 100%;
@@ -115,6 +107,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    border-radius: 0px !important;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -152,10 +145,35 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #fdb515;
+    background-color: #fdb515 !important;
 }
 
 .dropdown:hover .dropbtn a {
-    color: #fff;
+    color: #fff !important;
 }
+
+#active {
+  background-color: #fdb515 !important;
+  color: #fff !important;
+  padding: 16px 10px;
+}
+
 </style>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function() {
+    if (location.pathname.endsWith('/miller') || location.pathname.endsWith('/miller/')) {
+        var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller"]';
+    } else {
+        var path = location.pathname.split("/miller/")[1]
+        var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller/' + path + '"]';
+    }
+    console.log(selector);
+    $(selector).attr('id', 'active');
+});
+</script>
+
+<!-- end of nav -->
