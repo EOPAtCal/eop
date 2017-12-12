@@ -167,7 +167,8 @@
 $(function() {
     if (location.pathname.endsWith('/miller') || location.pathname.endsWith('/miller/')) {
         var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller"]';
-    } else {
+    } elsei
+    else {
         var path = location.pathname.split("/miller/")[1]
         var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller/' + path + '"]';
     }
