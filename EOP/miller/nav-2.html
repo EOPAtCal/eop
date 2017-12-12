@@ -1,29 +1,68 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 <div class="bootstrap-iso">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="/miller">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">George A. Miller</a>
+            <a class="nav-link" href="/miller">George A. Miller</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Become a Miller Scholar</a>
+            <a class="nav-link" href="/miller/george-a-miller">Become a Miller Scholar</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Past Scholars</a>
             <div class="dropdown-menu">
-            	<a class="dropdown-item" href="/miller/2017-scholars">2017 Scholars</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" href="/miller/2016-scholars">2016 Scholars</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" href="/miller/2015-scholars">2015 Scholars</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" href="/miller/2014-scholars">2014 Scholars</a>
+                <a class="dropdown-item" href="/miller/2017-scholars">2017 Scholars</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/miller/2016-scholars">2016 Scholars</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/miller/2015-scholars">2015 Scholars</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/miller/2014-scholars">2014 Scholars</a>
             </div>
         </li>
+        <li class="nav-item"><a href="/miller/events" class="nav-link">Events</a></li>
+        <li class="nav-item"><a href="/miller/giving-back" class="nav-link">Giving Back</a></li>
+        <li class="nav-item"><a href="/miller/contact" class="nav-link">Contact</a></li>
     </ul>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
+<style type="text/css" media="screen">
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.bootstrap-iso ul {
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+
+
+.bootstrap-iso .nav-item {
+	padding: 0px 2px;
+}
+.bootstrap-iso ul>li>a:hover,
+.bootstrap-iso .nav-pills .nav-link.active {
+    color: #fff !important;
+    background-color: #fdb515 !important;
+    border-color: #fdb515 !important;
+}
+
+.bootstrap-iso .nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+</style>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function() {
+    if (location.pathname.endsWith('/miller') || location.pathname.endsWith('/miller/')) {
+        var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller"]';
+    } else {
+        var path = location.pathname.split("/miller/")[1]
+        var selector = 'div.dropdown_menu > div.dropdown > button.dropbtn > a[href="/miller/' + path + '"]';
+    }
+    console.log(selector);
+    $(selector).attr('id', 'active');
+});
+</script>
