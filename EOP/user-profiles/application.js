@@ -40,9 +40,9 @@ function render(users, numberPerRow) {
     }
 }
 
-// (requirejs(["json!sample-json-for-card.json"], function(sample) {
-//     var users = JSON.parseJSON(sample);
-//     render(users);
-// }))();
-// 
-var json = require(['json!sample-json-for-card']);
+(require(["text!sample-json-for-card.json"], function(sample) {
+    var users = JSON.parseJSON(sample);
+    render(users);
+}))();
+
+var json = require(['text!sample-json-for-card.json']);
