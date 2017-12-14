@@ -1,0 +1,27 @@
+<script>
+$(document).ready(function() {
+    $("#camvas").after($("#searchForm"));
+});
+</script>
+<div class="bootstrap-iso">
+    <div class="searchForm">
+        <div class="form-inline">
+            <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
+            <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary">Search</button>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
+<script type="text/javascript">
+function runSearch() {
+    var keyword = $('#searchInput').val();
+    var newHref = window.location.origin + '/search?q=' + keyword;
+    window.location.replace(newHref);
+}
+
+$('#searchInput').keyup(function(event) {
+    if (event.keyCode === 13) {
+        runSearch();
+    }
+});
+</script>
