@@ -13,17 +13,35 @@ $(document).ready(function() {
             <div class="d-flex justify-content-end py-1">
                 <div class="form-inline">
                     <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
-                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary ml-2">Search</button>
                 </div>
             </div>
         </div>
     `
-    $('#header').prepend(searchElem);
+    $('#logo').after(searchElem);
 
     $('#searchInput').keyup(function(event) {
-    if (event.keyCode === 13) {
-        runSearch();
-    }
-});
+        if (event.keyCode === 13) {
+            runSearch();
+        }
+    });
 });
 </script>
+<style type="text/css">
+
+.bootstrap-iso input#searchInput,
+.bootstrap-iso button#searchButton {
+    border-radius: 0px;
+}
+.bootstrap-iso button#searchButton:hover {
+    background-color: #113a72;
+    border-color: #113a72;
+}
+.bootstrap-iso input#searchInput:focus {
+    border-color: #113a72;
+}
+
+div.bootstrap-iso {
+    float: right;
+}
+</style>
