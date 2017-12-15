@@ -10,10 +10,10 @@ function runSearch() {
 $(document).ready(function() {
     var searchElem = `
         <div class="bootstrap-iso">
-            <div class="d-flex justify-content-end py-1">
+            <div class="d-flex justify-content-end py-1 custom-background">
                 <div class="form-inline">
                     <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
-                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary ml-2">Search</button>
                 </div>
             </div>
         </div>
@@ -27,3 +27,21 @@ $(document).ready(function() {
     });
 });
 </script>
+<style type="text/css">
+.bootstrap-iso .custom-background {
+    background-color: #003262;
+}
+
+.bootstrap-iso button#searchButton {
+    background-color: #fff;
+    border: none;
+}
+
+.bootstrap-iso input#searchInput {
+    border-radius: 0px;
+}
+
+div.bootstrap-iso {
+    float: right;
+}
+</style>
