@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 function runSearch() {
@@ -11,7 +10,7 @@ function runSearch() {
 $(document).ready(function() {
     var searchElem = `
         <div class="bootstrap-iso">
-            <div class="d-flex justify-content-end py-1">
+            <div class="d-flex justify-content-end py-1 custom-background">
                 <div class="form-inline">
                     <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
                     <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary ml-2">Search</button>
@@ -29,17 +28,21 @@ $(document).ready(function() {
 });
 </script>
 <style type="text/css">
+.bootstrap-iso .custom-background {
+    background-color: #003262;
+}
 
-.bootstrap-iso input#searchInput,
 .bootstrap-iso button#searchButton {
+    background-color: #fff;
+    border:  none;
+}
+
+.bootstrap-iso input#searchInput {
     border-radius: 0px;
 }
-.bootstrap-iso button#searchButton:hover {
-    background-color: #113a72;
-    border-color: #113a72;
-}
+
 .bootstrap-iso input#searchInput:focus {
-    border-color: #113a72;
+    border-color: #003262;
 }
 
 div.bootstrap-iso {
