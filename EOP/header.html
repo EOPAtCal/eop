@@ -4,6 +4,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <!--FontAwesome-->
 <script src="https://use.fontawesome.com/cbf9554986.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
+<script type="text/javascript">
+function runSearch() {
+    var keyword = $('#searchInput').val();
+    var newHref = window.location.origin + '/search?q=' + keyword;
+    window.location.replace(newHref);
+}
+
+$(document).ready(function() {
+    var searchElem = `
+        <div class="bootstrap-iso">
+            <div class="d-flex justify-content-end py-1">
+                <div class="form-inline">
+                    <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
+                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    `
+    $('#logo').after(searchElem);
+
+    $('#searchInput').keyup(function(event) {
+        if (event.keyCode === 13) {
+            runSearch();
+        }
+    });
+});
+</script>
 <style>
 body {
     color: #222;

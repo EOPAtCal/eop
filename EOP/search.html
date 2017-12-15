@@ -18,12 +18,12 @@ $(document).ready(function() {
             </div>
         </div>
     `
-    $('#header').prepend(searchElem);
+    $('#logo').after(searchElem);
 
     $('#searchInput').keyup(function(event) {
-    if (event.keyCode === 13) {
-        runSearch();
-    }
-});
+        if (event.keyCode === 13) {
+            runSearch();
+        }
+    });
 });
 </script>
