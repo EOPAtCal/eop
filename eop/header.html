@@ -4,9 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <!--FontAwesome-->
 <script src="https://use.fontawesome.com/cbf9554986.js"></script>
+<!-- Custom-compiled Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css"> -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 function runSearch() {
     var keyword = $('#searchInput').val();
     var newHref = window.location.origin + '/search?q=' + keyword;
@@ -16,10 +17,10 @@ function runSearch() {
 $(document).ready(function() {
     var searchElem = `
         <div class="bootstrap-iso">
-            <div class="d-flex justify-content-end py-1">
+            <div class="d-flex justify-content-end py-1 custom-background">
                 <div class="form-inline">
                     <input id="searchInput" type="search" placeholder="search..." class="form-control mr-1">
-                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" id="searchButton" onclick="runSearch()" class="btn btn-outline-primary ml-2">Search</button>
                 </div>
             </div>
         </div>
@@ -32,12 +33,33 @@ $(document).ready(function() {
         }
     });
 });
-</script> -->
-<style>
-body {
-    color: #222;
-}
+</script>
 
+<style type="text/css">
+    .bootstrap-iso .custom-background {
+        background-color: #003262;
+    }
+
+    .bootstrap-iso button#searchButton {
+        background-color: #fff;
+        border:  none;
+    }
+
+    .bootstrap-iso input#searchInput {
+        border-radius: 0px;
+    }
+
+    .bootstrap-iso input#searchInput:focus {
+        border-color: #003262;
+    }
+
+    div.bootstrap-iso {
+        float: right;
+    }
+
+    body {
+        color: #222;
+    }
 
 /*Changes EOP Logo Size*/
 
@@ -125,8 +147,6 @@ body {
     color: inherit;
     cursor: pointer;
 }
-
-
 
 /*hide the bottom nav bar when the mobile one pops up*/
 
