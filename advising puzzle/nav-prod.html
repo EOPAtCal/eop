@@ -1,0 +1,54 @@
+<div class="bootstrap-iso">
+    <ul class="nav nav-pills justify-content-center align-items-center text-capitalize">
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/college-advisor">College Advisor</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/eop">Educational Opportunity Program</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/cal-student-central">Cal Student Central</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/major-advisor">Major Advisor</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/faculty-advisor">Faculty Advisor</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/peer-advisors">Peer Advisors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/advising/disabled-students-program">Disabled Students Program
+</a>
+        </li>
+    </ul>
+</div>
+<style type="text/css" media="screen">
+.bootstrap-iso ul {
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+}
+
+.bootstrap-iso ul>li>a:hover,
+.bootstrap-iso .nav-pills .nav-link.active {
+    color: #fff !important;
+    background-color: #0059af !important;
+    border-color: #0059af !important;
+}
+
+.bootstrap-iso .nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    if (location.pathname.endsWith('/advising') || location.pathname.endsWith('/advising/')) {
+        var selector = '.bootstrap-iso > ul > li > a[href="/advising"]';
+    } else {
+        path = location.pathname.split("/advising/")[1]
+        var selector = '.bootstrap-iso > ul > li > a[href^="/advising/' + path + '"]';
+    }
+    $(selector).addClass('active');
+});
+</script>

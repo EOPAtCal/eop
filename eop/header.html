@@ -4,11 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <!--FontAwesome-->
 <script src="https://use.fontawesome.com/cbf9554986.js"></script>
-
 <!-- Custom-compiled Bootstrap -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 <!-- start search -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 function runSearch() {
     var keyword = $('#searchInput').val();
     var newHref = window.location.origin + '/search?q=' + keyword;
@@ -17,7 +16,7 @@ function runSearch() {
 
 $(document).ready(function() {
     var searchElem = `
-        <div class="bootstrap-iso">
+        <div class="bootstrap-iso" id="search-custom">
             <div class="d-flex justify-content-end py-1 custom-background">
                 <div class="form-inline">
                     <input id="searchInput" type="search" placeholder="Search..." class="form-control mr-1">
@@ -34,7 +33,7 @@ $(document).ready(function() {
         }
     });
 });
-</script> -->
+</script>
 <!-- end search -->
 <style type="text/css">
 .bootstrap-iso {
@@ -59,7 +58,7 @@ $(document).ready(function() {
     border-color: #003262;
 }
 
-div.bootstrap-iso {
+#search-custom.bootstrap-iso {
     float: right;
 }
 
