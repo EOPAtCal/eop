@@ -58,34 +58,25 @@
 </style>
 <!-- custom bootstrap-iso added on header -->
 <div class="bootstrap-iso">
-    <div class="row">
-        <div class="col">
-            <div class="d-flex justify-content-center">
-                <div id="wheelDiv">
-                </div>
+    <div class="row align-items-center">
+        <div class="col d-flex justify-content-center">
+            <div id="wheelDiv">
             </div>
         </div>
         <div class="col">
-            <div id="left-side" class="d-flex align-self-center">
-                <div id="text-preview">
-                    <div class="card">
-                        <img class="card-img-top" src="http://via.placeholder.com/320x200" alt="image goes here">
-                        <div class="card-block">
-                            <h3 class="card-title text-capitalize"></h3>
-                            <p class="card-text"></p>
-                            <div>
-                                <a href="#" class="btn btn-primary" target="blank">Learn More</a>
-                            </div>
+            <div id="left-side" class="d-flex">
+                <div id="text-preview" class="card">
+                    <img class="card-img-top" src="#" alt="">
+                    <div class="card-block">
+                        <h3 class="card-title text-capitalize"></h3>
+                        <p class="card-text"></p>
+                        <div>
+                            <a href="#" class="btn btn-primary" target="blank">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <p class="pb-0">
-            At times, UC Berkeley can feel a bit overwhelming as students are learning to navigate the university in many ways. There are various advising units on campus that deliver unique support and, in some instances, reinforce standard advising practices. Advising is an essential resource that offers students academic/personal guidance, critical information, clarification on policies, and the opportunity to develop solutions and action plans. Advisors are invested in your success and are here to partner with you to help you get the most out of your time at UC Berkeley and prepare you for success after graduation. This “advising wheel” can assist you in learning about the many advising units on campus and how they can best meet your individual and ever evolving needs.
-        </p>
     </div>
 </div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/EOPAtCal/js@v0.1/squarespace.js"></script>
@@ -161,10 +152,10 @@ var texts = getData(data);
 
 function displayText(ind) {
     return function() {
-        document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
-        document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
-        document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
-        document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
+        document.querySelector("#text-preview.card > .card-block > .card-title").innerText = texts[ind]["title"];
+        document.querySelector("#text-preview.card > .card-block > .card-text").innerText = texts[ind]["text"]
+        document.querySelector("#text-preview.card > img").setAttribute("src", texts[ind]["img"])
+        document.querySelector("#text-preview.card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
     }
 }
 
@@ -180,10 +171,10 @@ function render(items) {
 
 function renderDefault() {
     var ind = 0
-    document.querySelector("#text-preview > .card > .card-block > .card-title").innerText = texts[ind]["title"];
-    document.querySelector("#text-preview > .card > .card-block > .card-text").innerText = texts[ind]["text"]
-    document.querySelector("#text-preview > .card > img").setAttribute("src", texts[ind]["img"])
-    document.querySelector("#text-preview > .card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
+    document.querySelector("#text-preview.card > .card-block > .card-title").innerText = texts[ind]["title"];
+    document.querySelector("#text-preview.card > .card-block > .card-text").innerText = texts[ind]["text"]
+    document.querySelector("#text-preview.card > img").setAttribute("src", texts[ind]["img"])
+    document.querySelector("#text-preview.card > .card-block > div > a").setAttribute("href", texts[ind]["link"])
 }
 
 window.onload = function() {
