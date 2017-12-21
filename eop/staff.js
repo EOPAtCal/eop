@@ -18,14 +18,17 @@ var elems =
 
 
 function createCard(item) {
-    var card = createElemWithClass('div', 'card');
-    var imgElem = createElemWithClass('img', 'card-img-top'); imgElem.src = item.img;
+    var card = createElemWithClass('div', 'card'); card.style.width = "20rem";
     var cardBlock = createElemWithClass('div', 'card-block');
-    // cardBlock.appendChild(item.name);
-    // cardBlock.appendChild(item.title);
-    // cardBlock.appendChild(item.quote);
     var cardFooter = createElemWithClass('div', 'card-footer');
-    cardFooter.innerHTML = '<a href="" class="btn btn-primary">Email</a>';
+    // end declarations
+    var img = createElemWithClass('img', 'card-img-top'); img.className += ' img-thumbnail img-responsive'; img.src = item.img; card.appendChild(img);
+    var name =  createElemWithClass('h4', 'card-title'); name.innerHTML =  item.name; cardBlock.appendChild(name);
+    var title =  createElemWithClass('p', 'card-text'); title.innerHTML =  item.title; cardBlock.appendChild(title);
+    var quote =  createElemWithClass('p', 'card-text'); quote.className += ' text-muted'; quote.innerHTML =  item.quote; cardBlock.appendChild(quote);
+    card.appendChild(cardBlock);
+    var email = createElemWithClass('p', 'text-primary'); email.innerHTML = '<a href="mailto:" class="btn btn-primary">Send Email</a>';
+    email.firstChild.href += item.email; cardFooter.appendChild(email);
     card.appendChild(cardFooter);
     return card;
 }
@@ -48,7 +51,9 @@ function render(users, numberPerRow) {
     var i;
 
     for (i = numberPerRow; i < len; i += numberPerRow) {
-        rootElem.appendChild(createRow(users.slice(i - numberPerRow, i)));
+        var row = createRow(users.slice(i - numberPerRow, i));
+        rootElem.appendChild(row);
+        rootElem.insertAdjacentHTML('beforeend', '<br>');
     }
 
     if (Math.abs(len - i) > 0) { // tail case
