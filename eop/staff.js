@@ -1,64 +1,67 @@
 'use strict';
 
 function createElemWithClass(type, className) {
-    var elem = document.createElement(type);
-    elem.className = className;
-    return elem;
+	var elem = document.createElement(type);
+	elem.className = className;
+	return elem;
 }
 
-var elems =
-`<div class="card">
-    <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
-    <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
-    </div>
-</div>`;
-
-
 function createCard(item) {
-    var card = createElemWithClass('div', 'card'); card.style.width = "20rem";
-    var cardBlock = createElemWithClass('div', 'card-block');
-    var cardFooter = createElemWithClass('div', 'card-footer');
-    // end declarations
-    var img = createElemWithClass('img', 'card-img-top'); img.className += ' img-thumbnail img-responsive'; img.src = item.img; card.appendChild(img);
-    var name =  createElemWithClass('h4', 'card-title'); name.innerHTML =  item.name; cardBlock.appendChild(name);
-    var title =  createElemWithClass('p', 'card-text'); title.innerHTML =  item.title; cardBlock.appendChild(title);
-    var quote =  createElemWithClass('p', 'card-text'); quote.className += ' text-muted'; quote.innerHTML =  item.quote; cardBlock.appendChild(quote);
-    card.appendChild(cardBlock);
-    var email = createElemWithClass('p', 'text-primary'); email.innerHTML = '<a href="mailto:" class="btn btn-primary">Send Email</a>';
-    email.firstChild.href += item.email; cardFooter.appendChild(email);
-    card.appendChild(cardFooter);
-    return card;
+	var card = createElemWithClass('div', 'card');
+	card.style.maxWidth = "20rem";
+	var cardBlock = createElemWithClass('div', 'card-block');
+	var cardFooter = createElemWithClass('div', 'card-footer');
+	// end declarations
+	var img = createElemWithClass('img', 'card-img-top');
+	img.className += ' img-thumbnail img-responsive';
+	img.src = item.img;
+	card.appendChild(img);
+	var name = createElemWithClass('h4', 'card-title');
+	name.innerHTML = item.name;
+	cardBlock.appendChild(name);
+	var title = createElemWithClass('p', 'card-text');
+	title.className += ' text-primary';
+	title.innerHTML = item.title;
+	cardBlock.appendChild(title);
+	var quote = createElemWithClass('p', 'card-text');
+	quote.className += ' text-muted font-italic';
+	quote.innerHTML = item.quote;
+	cardBlock.appendChild(quote);
+	card.appendChild(cardBlock);
+	var email = createElemWithClass('p', 'text-primary');
+	email.innerHTML = '<a href="mailto:" class="btn btn-primary"><i class="fa fa-envelope fa-fw"></i>Contact</a>';
+	email.firstChild.href += item.email;
+	cardFooter.appendChild(email);
+	card.appendChild(cardFooter);
+	return card;
 }
 
 
 function createRow(items) {
-    var row = createElemWithClass('div', 'card-deck');
-    var cards = [];
-    for (var i = 0; i < items.length; i++) {
-        var card = createCard(items[i]);
-        row.appendChild(card);
-    }
-    return row;
+	var row = createElemWithClass('div', 'card-deck');
+	var cards = [];
+	for (var i = 0; i < items.length; i++) {
+		var card = createCard(items[i]);
+		row.appendChild(card);
+	}
+	return row;
 }
 
 
 function render(users, numberPerRow) {
-    var rootElem = document.getElementById('root');
-    var len = users.length;
-    var i;
+	var rootElem = document.getElementById('root');
+	var len = users.length;
+	var i;
 
-    for (i = numberPerRow; i < len; i += numberPerRow) {
-        var row = createRow(users.slice(i - numberPerRow, i));
-        rootElem.appendChild(row);
-        rootElem.insertAdjacentHTML('beforeend', '<br>');
-    }
+	for (i = numberPerRow; i < len; i += numberPerRow) {
+		var row = createRow(users.slice(i - numberPerRow, i));
+		rootElem.appendChild(row);
+		rootElem.insertAdjacentHTML('beforeend', '<br>');
+	}
 
-    if (Math.abs(len - i) > 0) { // tail case
-        rootElem.appendChild(createRow(users.slice(i - numberPerRow, len)));
-    }
+	if (Math.abs(len - i) > 0) { // tail case
+		rootElem.appendChild(createRow(users.slice(i - numberPerRow, len)));
+	}
 }
 
 var staff = `
@@ -138,5 +141,5 @@ var staff = `
 }`;
 
 (function() {
-    render(JSON.parse(staff).data, 4);
+	render(JSON.parse(staff).data, 4);
 })();
