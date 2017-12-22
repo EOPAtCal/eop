@@ -1,0 +1,113 @@
+<!-- ** REMOVE LINKS IN PRODUCTION ** -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<!-- begin -->
+<script>
+var app = angular.module("peer-academic-counselors", []);
+app.controller("peer-academic-counselors-controller", function($scope) {
+    $scope.profiles = [{
+            "name": "Camila Moreno",
+            "major": "Anthropology",
+            "hometown": "San Diego, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/camila.jpg",
+            "link_url": "http://eop.berkeley.edu/camila-moreno",
+        },
+        {
+            "name": "Giovani Bautista",
+            "major": "Media Studies",
+            "hometown": "Morelia, Michoacan, Mexico",
+            "img_url": "http://julian-ledesma.squarespace.com/s/giovani.jpg",
+            "link_url": "http://eop.berkeley.edu/giovani-bautista",
+        },
+        {
+            "name": "Gustavo Alvarez",
+            "major": "Mechanical Engineering & Global Poverty and Practice",
+            "hometown": "El Salvador",
+            "img_url": "http://julian-ledesma.squarespace.com/s/gustavo.jpg",
+            "link_url": "http://eop.berkeley.edu/gustavo-escalante",
+        },
+        {
+            "name": "Nicki Aguilar",
+            "major": "Psychology",
+            "hometown": "San Fernando Valley",
+            "img_url": "http://julian-ledesma.squarespace.com/s/nicki.jpg",
+            "link_url": "http://eop.berkeley.edu/nicky-aguilar",
+        },
+        {
+            "name": "Ricky Muñiz",
+            "major": "Social Welfare",
+            "hometown": "Salinas, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/ricky.jpg",
+            "link_url": "http://eop.berkeley.edu/ricky-muniz",
+        },
+        {
+            "name": "James Laskey",
+            "major": "Computer Science & Cognitive Science",
+            "hometown": "",
+            "img_url": "http://julian-ledesma.squarespace.com/s/james.jpg",
+            "link_url": "http://eop.berkeley.edu/james-charles-laskey",
+        },
+        {
+            "name": "Marc Garcia",
+            "major": "Ethnic Studies & Education",
+            "hometown": "Fontana, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/marc.jpg",
+            "link_url": "http://eop.berkeley.edu/marc-garcia",
+        },
+        {
+            "name": "Dejae Edison",
+            "major": "Los Angeles, California",
+            "hometown": "",
+            "img_url": "http://julian-ledesma.squarespace.com/s/dejae.jpg",
+            "link_url": "http://eop.berkeley.edu/dejae-edison",
+        },
+        {
+            "name": "Bianca Rodriguez",
+            "major": "Ethnic Studies & Native American Studies",
+            "hometown": "Palo Alto, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/bianca.jpg",
+            "link_url": "http://eop.berkeley.edu/bianca-rodriguez",
+        },
+        {
+            "name": "Paola A. Mora Paredes",
+            "major": "Ethnic Studies",
+            "hometown": "Santa Ana, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/paola.jpg",
+            "link_url": "http://eop.berkeley.edu/paola-paredes",
+        },
+        {
+            "name": "Justin Loew",
+            "major": "American Studies",
+            "hometown": "Los Angeles, California",
+            "img_url": "http://julian-ledesma.squarespace.com/s/justin.jpg",
+            "link_url": "http://eop.berkeley.edu/justin-loew",
+        },
+        {
+            "name": "Anna Lee",
+            "major": "",
+            "hometown": "",
+            "img_url": "http://julian-ledesma.squarespace.com/s/anna.jpg",
+            "link_url": "http://eop.berkeley.edu/anna-lee",
+        },
+    ]
+});
+</script>
+<div ng-cloak id="profiles" ng-app="peer-academic-counselors" ng-controller="peer-academic-counselors-controller">
+    <div class="bootstrap-iso">
+        <div class="card-deck">
+            <div ng-repeat="profile in profiles">
+                <div class="clearfix" ng-if="$index > 0 && $index % 3 == 0"></div>
+                <div class="card" style="max-width:19rem;">
+                    <img class="card-img-top img-thumbnail img-responsive" ng-src="{{profile.img_url}}" alt="">
+                    <div class="card-block">
+                        <div>
+                            <h4 class="card-title">{{profile.name}}</h4>
+                            <p class="card-text text-primary">{{profile.hometown}}</p>
+                            <p class="card-text text-muted small text-uppercase">{{profile.major}}</p>
+                            <a class="btn btn-outline-primary" ng-href="{{profile.link_url}}">View Full Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
