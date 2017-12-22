@@ -1,5 +1,6 @@
 <!-- ** REMOVE LINKS IN PRODUCTION ** -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <!-- begin -->
 <script>
@@ -104,7 +105,10 @@ app.controller("peer-academic-counselors-controller", function($scope) {
                             <h4 class="card-title">{{profile.name}}</h4>
                             <p class="card-text text-primary">{{profile.hometown}}</p>
                             <p class="card-text text-muted small text-uppercase">{{profile.major}}</p>
-                            <a class="btn btn-outline-primary" ng-href="{{profile.link_url}}">View Full Profile</a>
+                            <a class="btn btn-outline-primary" ng-href="{{profile.link_url}}">
+                                <i class="fa fa-fw fa-eye"></i>
+                                View Full Profile
+                            </a>
                         </div>
                     </div>
                 </div>
