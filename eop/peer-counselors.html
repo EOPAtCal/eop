@@ -57,8 +57,8 @@ app.controller("peer-academic-counselors-controller", function($scope) {
         },
         {
             "name": "Dejae Edison",
-            "major": "Los Angeles, California",
-            "hometown": "",
+            "major": "",
+            "hometown": "Los Angeles, California",
             "img_url": "http://julian-ledesma.squarespace.com/s/dejae.jpg",
             "link_url": "http://eop.berkeley.edu/dejae-edison",
         },
@@ -95,16 +95,16 @@ app.controller("peer-academic-counselors-controller", function($scope) {
 </script>
 <div ng-cloak id="profiles" ng-app="peer-academic-counselors" ng-controller="peer-academic-counselors-controller">
     <div class="bootstrap-iso">
-        <div class="card-deck">
-            <div ng-repeat="profile in profiles">
-                <div class="clearfix" ng-if="$index > 0 && $index % 3 == 0"></div>
-                <div class="card" style="max-width:19rem;">
-                    <img class="card-img-top img-thumbnail img-responsive" ng-src="{{profile.img_url}}" alt="">
-                    <div class="card-block">
-                        <div>
+        <div ng-repeat="profile_row in profiles | ">
+            <div class="card-deck" ng-if="$index % 3 == 0">
+                <div ng-repeat="profile in profile_row">
+                    <div class="card" style="max-width:19rem;">
+                        <img class="card-img-top img-thumbnail img-responsive" ng-src="{{profile.img_url}}" alt="">
+                        <div class="card-block">
                             <h4 class="card-title">{{profile.name}}</h4>
                             <p class="card-text text-primary">{{profile.hometown}}</p>
-                            <p class="card-text text-muted small text-uppercase">{{profile.major}}</p>
+                            <p class="card-text text-muted small text-uppercase"> {{profile.major}}
+                            </p>
                             <a class="btn btn-outline-primary" ng-href="{{profile.link_url}}">
                                 <i class="fa fa-fw fa-eye"></i>
                                 View Full Profile
@@ -115,3 +115,4 @@ app.controller("peer-academic-counselors-controller", function($scope) {
             </div>
         </div>
     </div>
+</div>
