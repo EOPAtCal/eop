@@ -49,32 +49,17 @@
   }
 
 
-  function createRow(items) {
-    var row = createElemWithClass('div', 'card-deck');
-    var cards = [];
-    for (var i = 0; i < items.length; i++) {
-      var card = createCard(items[i]);
-      row.appendChild(card);
-    }
-    return row;
-  }
-
-
   function render(users, numberPerRow) {
     var rootElem = document.getElementById('rootBootstrap');
-    var len = users.length;
-    var i;
+    var cardDeck = createElemWithClass('div', 'card-deck');
 
-    for (i = numberPerRow; i < len; i += numberPerRow) {
-      var row = createRow(users.slice(i - numberPerRow, i));
-      rootElem.appendChild(row);
-      rootElem.insertAdjacentHTML('beforeend', '<br>');
+    for (const card of users) {
+      const cardContainer = document.createElement('div');
+      cardContainer.appendChild(createCard(card));
+      cardContainer.appendChild(document.createElement('br'));
+      cardDeck.appendChild(cardContainer);
     }
-
-    if (Math.abs(len - i) > 0) { // tail case
-      console.log(Math.abs(len - i));
-      rootElem.appendChild(createRow(users.slice(i - numberPerRow, len)));
-    }
+    rootElem.appendChild(cardDeck);
   }
 
   var staff =
