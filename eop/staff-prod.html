@@ -1,6 +1,6 @@
 <div class="bootstrap-iso">
-    <div id="root">
-    </div>
+  <div id="root">
+  </div>
 </div>
 
 
@@ -15,6 +15,8 @@
 
   function createCard(item) {
     var card = createElemWithClass('div', 'card');
+    card.className += ' mb-3';
+    card.style.minWidth = "15rem";
     card.style.maxWidth = "19rem";
     var cardBlock = createElemWithClass('div', 'card-block');
     var cardFooter = createElemWithClass('div', 'card-footer');
@@ -42,35 +44,18 @@
     return card;
   }
 
-
-  function createRow(items) {
-    var row = createElemWithClass('div', 'card-deck');
-    var cards = [];
-    for (var i = 0; i < items.length; i++) {
-      var card = createCard(items[i]);
-      row.appendChild(card);
-    }
-    return row;
-  }
-
-
   function render(users, numberPerRow) {
     var rootElem = document.getElementById('root');
-    var len = users.length;
-    var i;
+    var cardDeck = createElemWithClass('div', 'card-deck');
 
-    for (i = numberPerRow; i < len; i += numberPerRow) {
-      var row = createRow(users.slice(i - numberPerRow, i));
-      rootElem.appendChild(row);
-      rootElem.insertAdjacentHTML('beforeend', '<br>');
+    for (const user of users) {
+      cardDeck.appendChild(createCard(user));
     }
-
-    if (Math.abs(len - i) > 0) { // tail case
-      rootElem.appendChild(createRow(users.slice(i - numberPerRow, len)));
-    }
+    rootElem.appendChild(cardDeck);
   }
 
-  var staff = `
+  var staff =
+    `
   {
     "data": [
       {
