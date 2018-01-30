@@ -13,7 +13,9 @@
   }
 
   function createCard(item) {
-    var card = createElemWithClass('div', 'card'); card.style.maxWidth = "14.4rem";
+    var card = createElemWithClass('div', 'card');
+    card.style.maxWidth = "14.4rem";
+    card.className += ' mb-3';
     var cardBlock = createElemWithClass('div', 'card-block');
     var img = createElemWithClass('img', 'card-img-top');
 
@@ -54,10 +56,7 @@
     var cardDeck = createElemWithClass('div', 'card-deck');
 
     for (const card of users) {
-      const cardContainer = document.createElement('div');
-      cardContainer.appendChild(createCard(card));
-      cardContainer.appendChild(document.createElement('br'));
-      cardDeck.appendChild(cardContainer);
+      cardDeck.appendChild(createCard(card));
     }
     rootElem.appendChild(cardDeck);
   }
