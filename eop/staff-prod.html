@@ -5,57 +5,57 @@
 
 
 <script type="text/javascript">
-  'use strict';
+"use strict";
 
-  function createElemWithClass(type, className) {
-    var elem = document.createElement(type);
-    elem.className = className;
-    return elem;
+function createElemWithClass(type, className) {
+  var elem = document.createElement(type);
+  elem.className = className;
+  return elem;
+}
+
+function createCard(item) {
+  var card = createElemWithClass("div", "card");
+  card.className += " mb-3";
+  card.style.minWidth = "15rem";
+  card.style.maxWidth = "19rem";
+  var cardBlock = createElemWithClass("div", "card-block");
+  var cardFooter = createElemWithClass("div", "card-footer");
+  var img = createElemWithClass("img", "card-img-top");
+  img.className += " img-thumbnail img-responsive";
+  img.src = item.img;
+  card.appendChild(img);
+  var name = createElemWithClass("h4", "card-title");
+  name.innerHTML = item.name;
+  cardBlock.appendChild(name);
+  var title = createElemWithClass("p", "card-text");
+  title.className += " text-primary";
+  title.innerHTML = item.title;
+  cardBlock.appendChild(title);
+  var quote = createElemWithClass("p", "card-text");
+  quote.className += " text-muted font-italic";
+  quote.innerHTML = item.quote;
+  cardBlock.appendChild(quote);
+  card.appendChild(cardBlock);
+  var email = createElemWithClass("p", "text-primary");
+  email.innerHTML =
+    '<a href="mailto:" class="btn btn-primary"><i class="fa fa-envelope fa-fw"></i>Contact</a>';
+  email.firstChild.href += item.email;
+  cardFooter.appendChild(email);
+  card.appendChild(cardFooter);
+  return card;
+}
+
+function render(users, numberPerRow) {
+  var rootElem = document.getElementById("root");
+  var cardDeck = createElemWithClass("div", "card-deck");
+
+  for (const user of users) {
+    cardDeck.appendChild(createCard(user));
   }
+  rootElem.appendChild(cardDeck);
+}
 
-  function createCard(item) {
-    var card = createElemWithClass('div', 'card');
-    card.className += ' mb-3';
-    card.style.minWidth = "15rem";
-    card.style.maxWidth = "19rem";
-    var cardBlock = createElemWithClass('div', 'card-block');
-    var cardFooter = createElemWithClass('div', 'card-footer');
-    var img = createElemWithClass('img', 'card-img-top');
-    img.className += ' img-thumbnail img-responsive';
-    img.src = item.img;
-    card.appendChild(img);
-    var name = createElemWithClass('h4', 'card-title');
-    name.innerHTML = item.name;
-    cardBlock.appendChild(name);
-    var title = createElemWithClass('p', 'card-text');
-    title.className += ' text-primary';
-    title.innerHTML = item.title;
-    cardBlock.appendChild(title);
-    var quote = createElemWithClass('p', 'card-text');
-    quote.className += ' text-muted font-italic';
-    quote.innerHTML = item.quote;
-    cardBlock.appendChild(quote);
-    card.appendChild(cardBlock);
-    var email = createElemWithClass('p', 'text-primary');
-    email.innerHTML = '<a href="mailto:" class="btn btn-primary"><i class="fa fa-envelope fa-fw"></i>Contact</a>';
-    email.firstChild.href += item.email;
-    cardFooter.appendChild(email);
-    card.appendChild(cardFooter);
-    return card;
-  }
-
-  function render(users, numberPerRow) {
-    var rootElem = document.getElementById('root');
-    var cardDeck = createElemWithClass('div', 'card-deck');
-
-    for (const user of users) {
-      cardDeck.appendChild(createCard(user));
-    }
-    rootElem.appendChild(cardDeck);
-  }
-
-  var staff =
-    `
+var staff = `
   {
     "data": [
       {
@@ -127,11 +127,18 @@
         "name": "Brieanna Wright",
         "quote": "\\\"Trust yourself. You know more than you think.\\\" - Benjamin Spock",
         "title": "EOP Academic Counselor"
+      },
+      {
+        "name": "Samantha Wong ",
+        "title": "EOP Academic Counselor",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5aa9964c0852291a6819e18e/1521063500980/sam1.jpg",
+        "quote": "\\\"Don’t judge each day by the harvest you reap but by the seeds that you plant.\\\" - Robert Louis Stevenson",
+        "email": "sleewong@berkeley.edu"
       }
     ]
   }`;
 
-  (function() {
-    render(JSON.parse(staff).data, 3);
-  })();
+(function() {
+  render(JSON.parse(staff).data, 3);
+})();
 </script>
