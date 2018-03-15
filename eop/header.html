@@ -11,15 +11,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
 <!-- start search -->
 <script type="text/javascript">
-  function runSearch() {
-    var keyword = $("#searchInput").val();
-    var newHref = window.location.origin + "/search?q=" + keyword;
-    window.location.replace(newHref);
-  }
+function runSearch() {
+  var keyword = $("#searchInput").val();
+  var newHref = window.location.origin + "/search?q=" + keyword;
+  window.location.replace(newHref);
+}
 
-  $(document).ready(function() {
-    var searchElem =
-      `
+$(document).ready(function() {
+  var searchElem = `
         <div class="bootstrap-iso" id="search-custom">
             <div class="d-flex justify-content-end py-1 custom-background">
                 <div class="form-inline">
@@ -29,14 +28,14 @@
             </div>
         </div>
     `;
-    $("#logo").after(searchElem);
+  $("#logo").after(searchElem);
 
-    $("#searchInput").keyup(function(event) {
-      if (event.keyCode === 13) {
-        runSearch();
-      }
-    });
+  $("#searchInput").keyup(function(event) {
+    if (event.keyCode === 13) {
+      runSearch();
+    }
   });
+});
 </script>
 <!-- end search -->
 <style type="text/css">
@@ -49,7 +48,7 @@
   }
 
   .bootstrap-iso button#searchButton {
-    background-color: #0059AF;
+    background-color: #003262;
     border: none;
     color: #fff !important;
   }

@@ -4,21 +4,13 @@
 <!--FontAwesome-->
 <script src="https://use.fontawesome.com/cbf9554986.js"></script>
 <!-- Custom-compiled Bootstrap -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.2/bootstrap-iso.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.3/bootstrap-iso.css">
 
 <!-- DO NOT INCLUDE ABOVE -->
 <div class="bootstrap-iso">
     <div id="root">
     </div>
 </div>
-
-<!-- <style type="text/css">
-  .bootstrap-iso .btn-primary {
-    border-color: #0059af!important;
-    background: #0059af!important;
-  }
-
-</style> -->
 
 <script type="text/javascript">
 "use strict";
@@ -72,7 +64,10 @@ function render(users, numberPerRow) {
   rootElem.appendChild(cardDeck);
 }
 
-var staff = $.getJSON("https://api.myjson.com/bins/15tfz1", function(json) {
-  render(json.data, 3);
-});
+var staff = $.getJSON(
+  "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/staff.json",
+  function(json) {
+    render(json.data, 3);
+  }
+);
 </script>
