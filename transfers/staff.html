@@ -1,5 +1,5 @@
 <div class="bootstrap-iso">
-  <div id="rootBootstrap" class='d-flex justify-content-center'>
+  <div id="rootBootstrap">
   </div>
 </div>
 
@@ -14,6 +14,7 @@ function createElemWithClass(type, className) {
 function createCard(item) {
   var card = createElemWithClass("div", "card");
   card.style.maxWidth = "20.875rem";
+  card.style.minWidth = "108875rem";
   card.className += " mb-3";
   var cardBlock = createElemWithClass("div", "card-block");
   var img = createElemWithClass("img", "card-img-top");
@@ -39,7 +40,7 @@ function createCard(item) {
 
   var link = createElemWithClass("div", "flex");
   link.innerHTML =
-    '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw"></i>View Profile</a>';
+    '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw mr-2"></i>View Profile</a>';
   link.firstChild.href = item.link;
   cardBlock.appendChild(link);
 
@@ -57,34 +58,7 @@ function render(users, numberPerRow) {
   rootElem.appendChild(cardDeck);
 }
 
-var staff = [
-  {
-    name: "Lorena Valdez, M.A.",
-    title: "Director",
-    email: "lvaldez@berkeley.edu",
-    photo:
-      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/57e1c6ee20099e1414da365d/1473825807099/?format=400w",
-    link: "#"
-  },
-  {
-    name: "Steven Nguyen, M.A.",
-    title: "Academic Counselor",
-    email: "stnguyen@berkeley.edu",
-    photo:
-      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a832b2f8165f5d2a3498688/1518545716840/download+%282%29.jpeg?format=400w",
-    link: "http://transfers.berkeley.edu/steven-nguyen"
-  },
-  {
-    name: "Andrew Henry",
-    title: "Academic Counselor",
-    email: "andrewkhenry@berkeley.edu",
-    link: "http://transfers.berkeley.edu/andrew-henry",
-    photo:
-      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a832c6e0852296e82ed000f/1518546035083/Andrew.jpg?format=400w"
-  }
-];
-
-(function() {
+var staff = $.getJSON("/path/to/file", { param1: "value1" }, function(json) {
   render(staff, 3);
-})();
+});
 </script>

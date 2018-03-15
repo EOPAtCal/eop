@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Lorena Valdez, M.A.",
+    "title": "Director",
+    "email": "lvaldez@berkeley.edu",
+    "photo":
+      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/57e1c6ee20099e1414da365d/1473825807099/?format=400w",
+    "link": "#"
+  },
+  {
+    "name": "Steven Nguyen, M.A.",
+    "title": "Academic Counselor",
+    "email": "stnguyen@berkeley.edu",
+    "photo":
+      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a832b2f8165f5d2a3498688/1518545716840/download+%282%29.jpeg?format=400w",
+    "link": "http://transfers.berkeley.edu/steven-nguyen"
+  },
+  {
+    "name": "Andrew Henry",
+    "title": "Academic Counselor",
+    "email": "andrewkhenry@berkeley.edu",
+    "link": "http://transfers.berkeley.edu/andrew-henry",
+    "photo":
+      "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a832c6e0852296e82ed000f/1518546035083/Andrew.jpg?format=400w"
+  }
+]
