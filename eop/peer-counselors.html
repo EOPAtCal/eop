@@ -1,13 +1,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+</script>
 <script>
 var app = angular.module("peer-academic-counselors", []);
 app.controller("peer-academic-counselors-controller", function($scope) {
+  let data;
   $.getJSON(
-    "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/staff.json",
+    "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/peer-staff.json",
     function(json) {
-      $scope.profiles = json;
+      data = json;
     }
   );
+  $scope.profiles = data;
 });
 </script>
 <div ng-cloak id="profiles" ng-app="peer-academic-counselors" ng-controller="peer-academic-counselors-controller">
