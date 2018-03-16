@@ -4,64 +4,63 @@
 </div>
 
 <script type="text/javascript">
-  'use strict';
-  function createElemWithClass(type, className) {
-    var elem = document.createElement(type);
-    elem.className = className;
-    return elem;
+"use strict";
+function createElemWithClass(type, className) {
+  var elem = document.createElement(type);
+  elem.className = className;
+  return elem;
+}
+
+function createCard(item) {
+  var card = createElemWithClass("div", "card");
+  card.style.maxWidth = "14.4rem";
+  card.className += " mb-3";
+  var cardBlock = createElemWithClass("div", "card-block");
+  var img = createElemWithClass("img", "card-img-top");
+
+  img.className += " img-thumbnail img-responsive";
+  img.src = item.photo;
+  card.appendChild(img);
+
+  var name = createElemWithClass("h4", "card-title");
+  name.innerHTML = item.name;
+  cardBlock.appendChild(name);
+
+  var title = createElemWithClass("p", "card-text");
+  title.className += " text-primary";
+  title.innerHTML = item.title;
+  cardBlock.appendChild(title);
+
+  var major = createElemWithClass("p", "card-text");
+  major.className += " text-muted small text-uppercase";
+  major.innerHTML = item.major;
+  cardBlock.appendChild(major);
+
+  var hometown = createElemWithClass("p", "card-text");
+  hometown.innerHTML = item.hometown;
+  cardBlock.appendChild(hometown);
+
+  var link = createElemWithClass("p", "text-primary");
+  link.innerHTML =
+    '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw"></i>View Profile</a>';
+  link.firstChild.href = item.link;
+  cardBlock.appendChild(link);
+
+  card.appendChild(cardBlock);
+  return card;
+}
+
+function render(users, numberPerRow) {
+  var rootElem = document.getElementById("rootBootstrap");
+  var cardDeck = createElemWithClass("div", "card-deck");
+
+  for (const card of users) {
+    cardDeck.appendChild(createCard(card));
   }
+  rootElem.appendChild(cardDeck);
+}
 
-  function createCard(item) {
-    var card = createElemWithClass('div', 'card');
-    card.style.maxWidth = "14.4rem";
-    card.className += ' mb-3';
-    var cardBlock = createElemWithClass('div', 'card-block');
-    var img = createElemWithClass('img', 'card-img-top');
-
-    img.className += ' img-thumbnail img-responsive';
-    img.src = item.photo;
-    card.appendChild(img);
-
-    var name = createElemWithClass('h4', 'card-title');
-    name.innerHTML = item.name;
-    cardBlock.appendChild(name);
-
-    var title = createElemWithClass('p', 'card-text');
-    title.className += ' text-primary';
-    title.innerHTML = item.title;
-    cardBlock.appendChild(title);
-
-    var major = createElemWithClass('p', 'card-text');
-    major.className += ' text-muted small text-uppercase';
-    major.innerHTML = item.major;
-    cardBlock.appendChild(major);
-
-    var hometown = createElemWithClass('p', 'card-text');
-    hometown.innerHTML = item.hometown;
-    cardBlock.appendChild(hometown);
-
-    var link = createElemWithClass('p', 'text-primary');
-    link.innerHTML = '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw"></i>View Profile</a>';
-    link.firstChild.href = item.link;
-    cardBlock.appendChild(link);
-
-    card.appendChild(cardBlock);
-    return card;
-  }
-
-
-  function render(users, numberPerRow) {
-    var rootElem = document.getElementById('rootBootstrap');
-    var cardDeck = createElemWithClass('div', 'card-deck');
-
-    for (const card of users) {
-      cardDeck.appendChild(createCard(card));
-    }
-    rootElem.appendChild(cardDeck);
-  }
-
-  var staff =
-    `{
+var staff = `{
       "data": [
         {
           "photo": "https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a67cc0f8165f51ea11d009a/1516751892221/Aure2.jpg?format=300w",
@@ -242,7 +241,7 @@
       ]
   }`;
 
-  (function() {
-    render(JSON.parse(staff).data, 4);
-  })();
+(function() {
+  render(JSON.parse(staff).data, 4);
+})();
 </script>
