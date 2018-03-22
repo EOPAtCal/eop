@@ -75,6 +75,7 @@
             }
             #eop-events-list h3{
                 margin: 0px;
+                font-size: 24px;
             }
             #eop-events-list p{
                 margin: 0px;
@@ -120,6 +121,7 @@
                             <img ng-if="event.img_url" ng-src="{{event.img_url}}"></img>
                             <div class="padding-sm">
                                 <h3>{{event.name}}</h3>
+                                <hr/>
                                 <i>
                                     <p>{{event.date}}</p>
                                     <a ng-if="event.location_url" ng-href="{{event.location_url}}" target="_blank"><p>{{event.location}}</p></a>
