@@ -23,16 +23,14 @@ const App = ({ staff = [] }) => (
         <div className="uk-card uk-card-default uk-text-center">
           <div className="uk-card-media-top">
             <img
-              className="uk-border-circle uk-padding-large"
+              className="uk-border-circle uk-padding-small"
               src={member.photo}
               alt={member.name}
             />
           </div>
           <div className="uk-card-body">
             <h3 className="uk-card-title">{member.name}</h3>
-            <p className="uk-text-mute" style={{ color: "C4820E" }}>
-              {member.title}
-            </p>
+            <p className="uk-text-mute">{member.title}</p>
             <p className="uk-text-uppercase uk-text-small">{member.major}</p>
             <p className="uk-text-small uk-margin-bottom">{member.hometown}</p>
             {member.link &&
