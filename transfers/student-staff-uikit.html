@@ -23,7 +23,7 @@ const App = ({ staff = [] }) => (
         <div className="uk-card uk-card-default uk-text-center">
           <div className="uk-card-media-top">
             <img
-              className="uk-border-circle"
+              className="uk-border-circle uk-padding-large"
               src={member.photo}
               alt={member.name}
             />
@@ -34,7 +34,7 @@ const App = ({ staff = [] }) => (
               {member.title}
             </p>
             <p className="uk-text-uppercase uk-text-small">{member.major}</p>
-            <p className="uk-text-small">{member.hometown}</p>
+            <p className="uk-text-small uk-margin-bottom">{member.hometown}</p>
             {member.link &&
               member.link !== "#" && (
                 <a

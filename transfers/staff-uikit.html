@@ -23,7 +23,7 @@ const App = ({ staff = [] }) => (
         <div className="uk-card uk-card-default uk-text-center">
           <div className="uk-card-media-top">
             <img
-              className="uk-border-circle"
+              className="uk-border-circle uk-padding-large"
               src={member.photo}
               alt={member.name}
             />
@@ -31,7 +31,7 @@ const App = ({ staff = [] }) => (
           <div className="uk-card-body">
             <h3 className="uk-card-title">{member.name}</h3>
             <p className=" uk-text-mute uk-text-uppercase">{member.title}</p>
-            <p className="uk-margin-small-bottom">
+            <p className="uk-margin-bottom">
               <a href={`mailto:${member.email}`}>{member.email}</a>
             </p>
             {member.link &&
