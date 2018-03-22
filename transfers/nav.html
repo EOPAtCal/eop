@@ -1,0 +1,77 @@
+<div class="header">
+    <div class="mcnair_header">
+        <a href="/miller">
+    <img src="https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5a95e8bcec212dd0aab8f3f4/1519773886214/spmp.png?format=1000w">
+    </a>
+    </div>
+</div>
+<style>
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans); */
+
+.header {
+    background: #003262;
+    width: 100%;
+}
+
+.mcnair_header {
+    color: white;
+    text-align: center;
+    font-family: Open Sans;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+}
+
+.mcnair_header img {
+    width: 650px;
+}
+</style>
+<div class="bootstrap-iso">
+    <ul class="nav nav-pills justify-content-center align-items-center text-capitalize">
+        <li class="nav-item mr-1">
+            <a class="nav-link" href="/startingpoint">Home</a>
+        </li>
+        <li class="nav-item mr-1">
+            <a class="nav-link" href="/program-requirements">Program Requirements</a>
+        </li>
+        <li class="nav-item mr-1">
+            <a class="nav-link" href="/startingpoint-apply">Application</a>
+        </li>
+        <li class="nav-item mr-1">
+            <a class="nav-link" href="/spmpmentor">Become A Mentor</a>
+        </li>
+        <li class="nav-item mr-1">
+            <a class="nav-link" href="/contact-startingpoint">Contact Us</a>
+        </li>
+    </ul>
+</div>
+<style type="text/css" media="screen">
+.bootstrap-iso ul {
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+}
+
+.bootstrap-iso ul>li>a:hover,
+.bootstrap-iso .nav-pills .nav-link.active {
+    color: #fff !important;
+    background-color: #0059af !important;
+    border-color: #0059af !important;
+}
+
+.bootstrap-iso .nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+  if (location.pathname.endsWith("http://transfers.berkeley.edu/")) {
+    var selector = '.bootstrap-iso > ul > li > a[href="/r2r"]';
+  } else {
+    path = location.pathname.split("/r2r/")[1];
+    var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + path + '"]';
+  }
+  $(selector).addClass("active");
+});
+</script>
