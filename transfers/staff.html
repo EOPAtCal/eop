@@ -60,7 +60,7 @@ function render(users, numberPerRow) {
   rootElem.appendChild(cardDeck);
 }
 
-var staff = $.getJSON(
+$.getJSON(
   "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/transfers/staff.json",
   function(json) {
     render(json, 3);
