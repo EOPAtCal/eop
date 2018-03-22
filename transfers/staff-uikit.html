@@ -31,10 +31,8 @@ const App = ({ staff = [] }) => (
           <div className="uk-card-body">
             <h3 className="uk-card-title">{member.name}</h3>
             <p className=" uk-text-mute uk-text-uppercase">{member.title}</p>
-            <p>
-              <a href={`mailto:${member.email}`} style={{ color: "#C4820E" }}>
-                {member.email}
-              </a>
+            <p className="uk-margin-small-bottom">
+              <a href={`mailto:${member.email}`}>{member.email}</a>
             </p>
             {member.link &&
               member.link !== "#" && (
