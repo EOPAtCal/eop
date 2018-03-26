@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="header">
     <div class="mcnair_header">
         <a href="/miller">
@@ -6,7 +7,6 @@
     </div>
 </div>
 <style>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .header {
     background: #003262;
@@ -66,12 +66,15 @@
 </style>
 <script type="text/javascript">
 $(function() {
-    if (location.pathname.endsWith('/r2r') || location.pathname.endsWith('/r2r/')) {
-        var selector = '.bootstrap-iso > ul > li > a[href="/r2r"]';
-    } else {
-        path = location.pathname.split("/r2r/")[1]
-        var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + path + '"]';
-    }
-    $(selector).addClass('active');
+  if (
+    location.pathname.endsWith("/r2r") ||
+    location.pathname.endsWith("/r2r/")
+  ) {
+    var selector = '.bootstrap-iso > ul > li > a[href="/r2r"]';
+  } else {
+    path = location.pathname.split("/r2r/")[1];
+    var selector = '.bootstrap-iso > ul > li > a[href^="/r2r/' + path + '"]';
+  }
+  $(selector).addClass("active");
 });
 </script>
