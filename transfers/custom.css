@@ -1,0 +1,32 @@
+p {
+  margin-bottom: 0px !important;
+}
+
+.sqs-block {
+  padding-bottom: 18px !important;
+}
+
+.sqs-block-button .sqs-block-button-element--medium,
+.sqs-block-button-element--small,
+.sqs-block-button-element--large {
+  background-color: #0059af !important;
+  border-color: #0059af !important;
+}
+
+.sqs-block:not(.sqs-block-html):not(.sqs-block-markdown) {
+  clear: none;
+}
+
+body:not(.button-style-default).button-style-outline
+  .sqs-editable-button:hover {
+  background-color: #0059af;
+  color: #fff;
+}
+
+body:not(.button-style-default) .sqs-editable-button {
+  border-color: #0059af;
+}
+
+body:not(.button-style-default).button-style-outline .sqs-editable-button {
+  color: #0059af;
+}
