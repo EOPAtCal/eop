@@ -1,7 +1,7 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- uikit -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/uikit-custom-css@v0.1/uikit-iso.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/uikit-custom-css@v0.3/uikit-iso.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
 
@@ -25,6 +25,32 @@
     </nav>
   </div>
 </div>
+
+<script type="text/javascript">
+let sumStrings = arrStrings => {
+  return arrStrings.reduce((p, c) => {
+    if (c) {
+      return p + 1;
+    } else {
+      return p;
+    }
+  }, 0);
+};
+const arr = document.location.pathname.split("/");
+let sel = "";
+if (arr[1] === "startingpoint") {
+  if (arr.length < 3 || (arr.length === 3 && sumStrings(arr) === 1)) {
+    sel += `.uk-navbar-nav>li>a[href="/startingpoint"]`;
+  } else {
+    let ex = document.location.pathname.split("/startingpoint/")[1];
+    ex = ex.replace(/\//, "");
+    sel += `.uk-navbar-nav>li>a[href="/startingpoint/${ex}"]`;
+  }
+  $(sel)
+    .parent()
+    .addClass("uk-active");
+}
+</script>
 
 
 <style type="text/css">
