@@ -1,69 +1,70 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- DO NOT INCLUDE ABOVE -->
+
 <div class="bootstrap-iso">
-  <div id="rootBootstrap">
-  </div>
+    <div id="rootBootstrap">
+    </div>
 </div>
 
 <script type="text/javascript">
-"use strict";
-function createElemWithClass(type, className) {
-  var elem = document.createElement(type);
-  elem.className = className;
-  return elem;
-}
+    "use strict";
 
-function createCard(item) {
-  var card = createElemWithClass("div", "card");
-  card.style.maxWidth = "25rem";
-  card.style.minWidth = "24rem";
-  card.className += " mb-3";
-  var cardBlock = createElemWithClass("div", "card-block");
-  var img = createElemWithClass("img", "card-img-top");
+    function createElemWithClass(type, className) {
+        var elem = document.createElement(type);
+        elem.className = className;
+        return elem;
+    }
 
-  img.className += " rounded img-responsive";
-  img.src = item.photo;
-  card.appendChild(img);
+    function createCard(item) {
+        var card = createElemWithClass("div", "card");
+        card.style.maxWidth = "25rem";
+        card.style.minWidth = "24rem";
+        card.className += " mb-3";
+        var cardBlock = createElemWithClass("div", "card-block");
+        var img = createElemWithClass("img", "card-img-top");
 
-  var name = createElemWithClass("h4", "card-title");
-  name.innerHTML = item.name;
-  cardBlock.appendChild(name);
+        img.className += " rounded img-responsive";
+        img.src = item.photo;
+        card.appendChild(img);
 
-  var title = createElemWithClass("p", "card-text");
-  title.className += " text-muted small text-uppercase";
-  title.innerHTML = item.title;
-  cardBlock.appendChild(title);
+        var name = createElemWithClass("h4", "card-title");
+        name.innerHTML = item.name;
+        cardBlock.appendChild(name);
 
-  var email = createElemWithClass("p", "text-primary");
-  email.innerHTML =
-    '<a><i class="fa fa-envelope fa-fw"></i>' + item.email + "</a>";
-  email.firstChild.href = "mailto:" + item.email;
-  cardBlock.appendChild(email);
+        var title = createElemWithClass("p", "card-text");
+        title.className += " text-muted small text-uppercase";
+        title.innerHTML = item.title;
+        cardBlock.appendChild(title);
 
-  var link = createElemWithClass("div", "flex");
-  link.innerHTML =
-    '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw mr-2"></i>View Profile</a>';
-  link.firstChild.href = item.link;
-  cardBlock.appendChild(link);
+        var email = createElemWithClass("p", "text-primary");
+        email.innerHTML =
+            '<a><i class="fa fa-envelope fa-fw"></i>' + item.email + "</a>";
+        email.firstChild.href = "mailto:" + item.email;
+        cardBlock.appendChild(email);
 
-  card.appendChild(cardBlock);
-  return card;
-}
+        var link = createElemWithClass("div", "flex");
+        link.innerHTML =
+            '<a class="btn btn-outline-primary"><i class="fa fa-eye fa-fw mr-2"></i>View Profile</a>';
+        link.firstChild.href = item.link;
+        cardBlock.appendChild(link);
 
-function render(users, numberPerRow) {
-  var rootElem = document.getElementById("rootBootstrap");
-  var cardDeck = createElemWithClass("div", "card-deck");
+        card.appendChild(cardBlock);
+        return card;
+    }
 
-  for (const card of users) {
-    cardDeck.appendChild(createCard(card));
-  }
-  rootElem.appendChild(cardDeck);
-}
+    function render(users, numberPerRow) {
+        var rootElem = document.getElementById("rootBootstrap");
+        var cardDeck = createElemWithClass("div", "card-deck");
 
-$.getJSON(
-  "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/transfers/staff.json",
-  function(json) {
-    render(json, 3);
-  }
-);
+        for (const card of users) {
+            cardDeck.appendChild(createCard(card));
+        }
+        rootElem.appendChild(cardDeck);
+    }
+
+    $.getJSON(
+        "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/transfers/staff.json",
+        function(json) {
+            render(json, 3);
+        }
+    );
 </script>
