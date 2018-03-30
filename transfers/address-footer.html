@@ -5,32 +5,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
 
 <div class="uikit-iso">
-    <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small " uk-grid>
+    <hr />
+    <div class="uk-grid-match uk-flex uk-flex-between uk-flex-middle" id="address-footer" uk-grid>
         <div>
-            <div class="uk-card uk-card-default uk-card-body">
-                <div>
-                    <p class="custom-address">
-                        <i class="fa fa-map-marker fa-fw"></i> <a href='https://www.google.com/maps/place/UC+Berkeley+Transfer+Student+Center/@37.8708367,-122.2614767,17z/data=!4m8!1m2!2m1!1s+100+C%C3%A9sar+E.+Ch%C3%A1vez+Student+Center!3m4!1s0x80857c260b5a8dad:0x49e7928499bde997!8m2!3d37.8697743!4d-122.2600361'>100 César E. Chávez Student Center</a>
-                    </p>
-                    <p class="custom-address">
-                        <i class="fa fa-no-icon fa-fw"></i> Berkeley, CA 94720-4260
-                    </p>
-                    <p class="custom-address">
-                        <i class="fa fa-phone fa-fw"></i> <a href='tel:5106424257'>(510) 642-4257</a>
-                    </p>
-                    <p class="custom-address">
-                        <i class="fa fa-university fa-fw"></i> University of California, Berkeley
-                    </p>
-                </div>
+            <div class="uk-panel">
+                <p class="custom-address">
+                    <i class="fa fa-map-marker fa-fw"></i> <a href='https://www.google.com/maps/place/UC+Berkeley+Transfer+Student+Center/@37.8708367,-122.2614767,17z/data=!4m8!1m2!2m1!1s+100+C%C3%A9sar+E.+Ch%C3%A1vez+Student+Center!3m4!1s0x80857c260b5a8dad:0x49e7928499bde997!8m2!3d37.8697743!4d-122.2600361'>100 César E. Chávez Student Center</a>
+                </p>
+                <p class="custom-address">
+                    <i class="fa fa-no-icon fa-fw"></i> Berkeley, CA 94720-4260
+                </p>
+                <p class="custom-address">
+                    <i class="fa fa-phone fa-fw"></i> <a href='tel:5106424257'>(510) 642-4257</a>
+                </p>
+                <p class="custom-address">
+                    <i class="fa fa-university fa-fw"></i> University of California, Berkeley
+                </p>
 
             </div>
         </div>
         <div>
-            <div class="uk-card uk-card-default uk-card-body">
-                <img src="https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5abd7b58aa4a998b876032ea/1522367320502/primarylogo+%281%29.png" alt="">
-            </div>
+            <div class="uk-panel"><img width="450" src="https://static1.squarespace.com/static/53b34431e4b0988226f28acd/t/5abd7b58aa4a998b876032ea/1522367320502/primarylogo+%281%29.png" alt=""></div>
         </div>
     </div>
+
 </div>
 
 <style type='text/css'>
@@ -43,8 +41,7 @@
         text-decoration: none;
     }
     
-    .uk-tile {
-        border: 1px solid red
+    .uikit-iso .uk-grid>div:nth-child(2) {
+        padding-left: 0px
     }
-    
-    </sty
+</style>
