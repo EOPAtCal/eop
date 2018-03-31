@@ -1,0 +1,34 @@
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<!-- uikit -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/uikit-custom-css@v0.3/uikit-iso.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+<script>
+    const runSearch = () => {
+        const keyword = $("#searchInput").val();
+        const newHref = window.location.origin + "/search?q=" + keyword;
+        window.location.replace(newHref);
+    }
+
+    const searchBar = `
+    <div class="uikit-iso">
+        <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+                <a href="javascript:runSearch();" class="uk-search-icon-flip" uk-search-icon></a>
+                <input id="searchInput" class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+    `
+
+    $(() => {
+        $("#logo").after(searchBar);
+        $(".uikit-iso .uk-search").submit((e) => e.preventDefault())
+        $(".uikit-iso input#searchInput").keyup((e) => {
+            if (e.keyCode === 13) {
+                runSearch();
+            }
+        });
+    })
+</script>
