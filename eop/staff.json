@@ -1,96 +1,78 @@
-{
-  "data": [
-    {
-      "email": "byburton@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8be4c83025f844a63c8c/1514834921875/Yuki.jpg?format=1000w",
-      "name": "Yuki Burton",
-      "quote": "\"Be kind to yourself, always. Learn to trust the process.\"",
-      "title": "EOP Assistant Director/Academic Counselor"
+[{
+        "email": "byburton@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8be4c83025f844a63c8c/1514834921875/Yuki.jpg?format=1000w",
+        "name": "Yuki Burton",
+        "quote": "\"Be kind to yourself, always. Learn to trust the process.\"",
+        "title": "EOP Assistant Director/Academic Counselor"
     },
     {
-      "email": "elias_canedo@berkeley.edu ",
-      "img": "http://eop.berkeley.edu/s/Ruben.jpg",
-      "name": "Ruben Canedo",
-      "quote": "\"Sometimes you just gotta believe.\"",
-      "title": "CE3 Research and Mobilization Coordinator"
+        "email": "elias_canedo@berkeley.edu ",
+        "img": "http://eop.berkeley.edu/s/Ruben.jpg",
+        "name": "Ruben Canedo",
+        "quote": "\"Sometimes you just gotta believe.\"",
+        "title": "CE3 Research and Mobilization Coordinator"
     },
     {
-      "email": "liglesias@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b7c24a694278e0f2746/1514834848324/Lili.jpg?format=750w",
-      "name": "Liliana Iglesias",
-      "quote": "\"The expert in anything was once a beginner.\" - Helen Hayes",
-      "title": "Undocumented Student Program Academic Counselor"
+        "email": "liglesias@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b7c24a694278e0f2746/1514834848324/Lili.jpg?format=750w",
+        "name": "Liliana Iglesias",
+        "quote": "\"The expert in anything was once a beginner.\" - Helen Hayes",
+        "title": "Undocumented Student Program Academic Counselor"
     },
     {
-      "email": "mitzi@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bbb24a694278e0f2ff0/1514834900251/Mitzi.jpg?format=750w",
-      "name": "Mitzi Iniguez",
-      "quote": "\"Grades do not define you, your actions do.\"",
-      "title": "EOP Assistant Director/Academic Counselor"
+        "email": "mitzi@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bbb24a694278e0f2ff0/1514834900251/Mitzi.jpg?format=750w",
+        "name": "Mitzi Iniguez",
+        "quote": "\"Grades do not define you, your actions do.\"",
+        "title": "EOP Assistant Director/Academic Counselor"
     },
     {
-      "email": "jledesma@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b600852291b7699c220/1514834821701/Julian.jpg?format=750w",
-      "name": "Julian Ledesma",
-      "quote":
-        "\"Make this University yours! Take advantage of the resources and professionals available to you!\"",
-      "title": "CE3 Executive Director"
+        "email": "jledesma@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b600852291b7699c220/1514834821701/Julian.jpg?format=750w",
+        "name": "Julian Ledesma",
+        "quote": "\"Make this University yours! Take advantage of the resources and professionals available to you!\"",
+        "title": "CE3 Executive Director"
     },
     {
-      "email": "fmejia@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b390852291b7699bce2/1514834790871/Fabrizio.jpg?format=750w",
-      "name": "Fabrizio Mejia",
-      "quote":
-        "\"Do not look where you fell, but where you slipped.\" - African proverb",
-      "title": "Assistant Vice Chancellor: Student Equity and Success"
+        "email": "fmejia@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b390852291b7699bce2/1514834790871/Fabrizio.jpg?format=750w",
+        "name": "Fabrizio Mejia",
+        "quote": "\"Do not look where you fell, but where you slipped.\" - African proverb",
+        "title": "Assistant Vice Chancellor: Student Equity and Success"
     },
     {
-      "email": "quame@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bce9140b7ea141fbe78/1514834901963/Quame%CC%81.jpg?format=750w",
-      "name": "Quame",
-      "quote": "\"Making comparisons can spoil your happiness.\"",
-      "title": "EOP Academic Counselor"
+        "email": "quame@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bce9140b7ea141fbe78/1514834901963/Quame%CC%81.jpg?format=750w",
+        "name": "Quame",
+        "quote": "\"Making comparisons can spoil your happiness.\"",
+        "title": "EOP Academic Counselor"
     },
     {
-      "email": "macramos@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b9cf9619ae3bb7f3977/1514834879123/Marcos.jpg?format=750w",
-      "name": "Marcos Ramos",
-      "quote":
-        "\"A major component to academic success is seeking support and becoming part of a student community.\"",
-      "title": "EOP Academic Counselor"
+        "email": "macramos@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b9cf9619ae3bb7f3977/1514834879123/Marcos.jpg?format=750w",
+        "name": "Marcos Ramos",
+        "quote": "\"A major component to academic success is seeking support and becoming part of a student community.\"",
+        "title": "EOP Academic Counselor"
     },
     {
-      "email": "someng@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bb39140b7ea141fbac4/1514834889019/Meng.jpg?format=750w",
-      "name": "Meng So",
-      "quote": "\"We must become the change we wish to see.\" - Ghandi",
-      "title": "Undocumented Student Program Director/Academic Counselor"
+        "email": "someng@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8bb39140b7ea141fbac4/1514834889019/Meng.jpg?format=750w",
+        "name": "Meng So",
+        "quote": "\"We must become the change we wish to see.\" - Ghandi",
+        "title": "Undocumented Student Program Director/Academic Counselor"
     },
     {
-      "email": "bwright32@berkeley.edu",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b0b8165f54918e45d5c/1514834701681/Brieanna.jpg?format=750w",
-      "name": "Brieanna Wright",
-      "quote":
-        "\"Trust yourself. You know more than you think.\" - Benjamin Spock",
-      "title": "EOP Academic Counselor"
+        "email": "bwright32@berkeley.edu",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/5a4a8ae153450a63fe7fe5f7/5a4a8b0b8165f54918e45d5c/1514834701681/Brieanna.jpg?format=750w",
+        "name": "Brieanna Wright",
+        "quote": "\"Trust yourself. You know more than you think.\" - Benjamin Spock",
+        "title": "EOP Academic Counselor"
     },
     {
-      "name": "Samantha Wong ",
-      "title": "EOP Academic Counselor",
-      "img":
-        "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5aa9964c0852291a6819e18e/1521063500980/sam1.jpg",
-      "quote":
-        "\"Don’t judge each day by the harvest you reap but by the seeds that you plant.\" - Robert Louis Stevenson",
-      "email": "sleewong@berkeley.edu"
+        "name": "Samantha Wong ",
+        "title": "EOP Academic Counselor",
+        "img": "https://static1.squarespace.com/static/51095940e4b093a50121aa90/t/5aa9964c0852291a6819e18e/1521063500980/sam1.jpg",
+        "quote": "\"Don’t judge each day by the harvest you reap but by the seeds that you plant.\" - Robert Louis Stevenson",
+        "email": "sleewong@berkeley.edu"
     }
-  ]
-}
+]

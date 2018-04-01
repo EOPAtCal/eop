@@ -1,0 +1,71 @@
+[{
+        "name": "Gustavo Armando Alvarez Escalante",
+        "major": "Mechanical Engineering Major, Global Poverty and Practice Minor",
+        "hometown": "San Bernardino, CA",
+        "img_url": "/s/Gustavo.jpg",
+        "link_url": "/gustavo-escalante"
+    },
+    {
+        "name": "Francisco Martinez",
+        "major": "Civil Engineering Major",
+        "hometown": "San Bernardino, Huntington Park, CA",
+        "img_url": "/s/Francisco.jpg",
+        "link_url": ""
+    },
+    {
+        "name": "Luz G Memije",
+        "major": "Mechanical Engineering Major, Spanish and Global Poverty and Practice Minors",
+        "hometown": "Lake Elsinore (Riverside County), CA",
+        "img_url": "/s/Luz.jpg",
+        "link_url": ""
+    },
+    {
+        "name": "Aileen Iniguez",
+        "major": "Applied Mathematics Major, Concentrated on Operations Research",
+        "hometown": "Oakland, CA",
+        "img_url": "/s/Aileen_Headshot.jpeg",
+        "link_url": ""
+    },
+    {
+        "name": "Maria Cabrera",
+        "major": "Biochemistry Major",
+        "hometown": "Los Angeles, CA",
+        "img_url": "/s/Marian.png",
+        "link_url": ""
+    },
+    {
+        "name": "Gabby Paras",
+        "major": "Molecular and Cellular Biology Major",
+        "hometown": "Long Beach, CA",
+        "img_url": "/s/GabbyP.jpg",
+        "link_url": ""
+    },
+    {
+        "name": "Fernanda Sanchez Moreno",
+        "major": "Intended Computer Science and Cognitive Science, History Minor",
+        "hometown": "Santa Ana, CA",
+        "img_url": "/s/Fernanda.jpg",
+        "link_url": ""
+    },
+    {
+        "name": "Kelly Lancaster",
+        "major": "Premedical Molecular Cell Biology and Integrative Biology Double Major",
+        "hometown": "Redlands, California",
+        "img_url": "/s/Kellyn.png",
+        "link_url": ""
+    },
+    {
+        "name": "Gabrielle Santa Maria Balanon",
+        "major": "Intended Computer Science, Ethnic Studies Minor",
+        "hometown": "Seattle, WA",
+        "img_url": "/s/GabbyB.JPG",
+        "link_url": ""
+    },
+    {
+        "name": "Silvia Kim",
+        "major": "Cognitive Science Major",
+        "hometown": "Koreatown Los Angeles, CA",
+        "img_url": "/s/Silvia.jpg",
+        "link_url": ""
+    }
+]
