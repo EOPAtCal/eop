@@ -14,18 +14,23 @@
 <script type="text/babel">
     const App = ({ staff = [] }) => (
     <div class="uikit-iso">
-        <div style={{ fontWeight: 300 }} className="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match" data-uk-grid>
+        <div style={{ fontWeight: 300 }} class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match" data-uk-grid>
             {staff.map(member => (
             <div key={member.email}>
-                <div className="uk-card uk-card-default uk-text-center">
-                    <div className="uk-card-media-top">
-                        <img className="uk-border-circle uk-padding-small" src={member.photo} alt={member.name} />
+                <div class="uk-card uk-card-default uk-text-center">
+                    <div class="uk-card-media-top">
+                        <img class="uk-border-circle uk-padding-small" src={member.photo} alt={member.name} />
                     </div>
-                    <div className="uk-card-body">
-                        <h3 className="uk-card-title">{member.name}</h3>
-                        <p className=" uk-text-mute uk-text-uppercase">{member.title}</p>
-                        <p className="uk-text-muted uk-text-meta">{member.quote}</p>
-                        <p className="uk-margin-bottom">
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{member.name}</h3>
+                        <h4 class=" uk-text-primary">{member.title}</h4>
+                        <blockquote cite="#">
+                            <p class="uk-margin-small-bottom  uk-text-muted">{member.quote}</p>
+                            {"cite" in member &&
+                            <footer><cite>{member.cite}</cite></footer>}
+                        </blockquote>
+                        <p class="uk-text-muted">{member.quote}</p>
+                        <p class="uk-margin-bottom">
                             <a href={`mailto:${member.email}`}>{member.email}</a>
                         </p>
                     </div>
