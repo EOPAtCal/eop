@@ -20,7 +20,10 @@
             <div key={member.email}>
                 <div class="uk-card uk-card-default uk-text-center">
                     <div class="uk-card-media-top">
-                        <img class=" uk-padding-small" width="360" src={member.photo} alt={member.name} />
+                        <div class="uk-inline uk-light">
+                            <img class=" uk-padding-small" src={member.photo} alt={member.name} />
+                            <a class="uk-position-absolute uk-transform-center" style={{ "left": "86%", "top": "90%" }} href={`mailto:${member.email}`} data-uk-marker data-uk-icon="icon: mail"></a>
+                        </div>
                     </div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title">{member.name}</h3>
@@ -28,10 +31,10 @@
                         <blockquote cite="#" class="uk-text-muted">
                             <p class="uk-margin-small-bottom">{member.quote}</p>
                             {"cite" in member &&
-                            <footer><cite>{member.cite}</cite></footer>}
+                            <footer><cite class="uk-text-muted">{member.cite}</cite></footer>}
                         </blockquote>
                         <p>
-                            <a href={`mailto:${member.email}`} class="uk-button uk-button-default">Email</a>
+                            <a href={`mailto:${member.email}`}>{member.email}</a>
                         </p>
                     </div>
                 </div>
