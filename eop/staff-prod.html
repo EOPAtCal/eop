@@ -1,4 +1,11 @@
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- fontwesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Custom-compiled Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/css@v0.3/bootstrap-iso.css">
 <div class="bootstrap-iso">
+
     <div id="root">
     </div>
 </div>
@@ -58,7 +65,7 @@
     var staff = $.getJSON(
         "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/staff.json",
         function(json) {
-            render(json.data, 3);
+            render(json, 3);
         }
     );
 </script>
