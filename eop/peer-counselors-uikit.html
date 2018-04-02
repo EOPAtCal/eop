@@ -1,0 +1,49 @@
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- custom uikit -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EOPAtCal/uikit-custom-css@v0.3/uikit-iso.min.css" />
+<!-- default uikit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+<!-- react -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- babel -->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<style type="text/css">
+    .uikit-iso blockquote {
+        font-size: 0.9rem
+    }
+</style>
+
+<div id="root"></div>
+<script type="text/babel">
+    const App = ({ staff = [] }) => (
+    <div class="uikit-iso">
+        <div style={{ fontWeight: 300 }} class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-5@xl uk-grid-small uk-grid-match" data-uk-grid data-uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500">
+            {staff.map(member => (
+            <div key={member.email}>
+                <div class="uk-card uk-card-default uk-text-center">
+                    <div class="uk-card-media-top">
+                        <img class=" uk-padding-small" src={member.img_url} alt={member.name} />
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">{member.name}</h3>
+                        <p class="uk-text-meta uk-text-uppercase">{member.major}</p>
+                        <p>{member.hometown}</p>
+                        {member.link_url && member.link_url !== "#" && (
+                        <a href={member.link_url} target="_blank" class="uk-button uk-button-default uk-flex uk-flex-middle">
+                            <span uk-icon="icon: user; ratio: .75" class="uk-margin-small-right" />
+                            <span>View Profile</span>
+                        </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+            ))}
+        </div>
+    </div>
+    ); $(() => { $.getJSON( "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/peer-counselors.json", json => { ReactDOM.render(
+    <App staff={json} />, document.getElementById("root")); } ); });
+</script>
