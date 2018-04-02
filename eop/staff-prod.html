@@ -4,61 +4,61 @@
 </div>
 
 <script type="text/javascript">
-"use strict";
+    "use strict";
 
-function createElemWithClass(type, className) {
-  var elem = document.createElement(type);
-  elem.className = className;
-  return elem;
-}
+    function createElemWithClass(type, className) {
+        var elem = document.createElement(type);
+        elem.className = className;
+        return elem;
+    }
 
-function createCard(profile) {
-  var card = createElemWithClass("div", "card");
-  card.className += " mb-3";
-  card.style.minWidth = "18rem";
-  card.style.maxWidth = "20rem";
-  var cardBlock = createElemWithClass("div", "card-block");
-  var cardFooter = createElemWithClass("div", "card-footer");
-  var img = createElemWithClass("img", "card-img-top");
-  img.className += " img-thumbnail";
-  img.src = profile.img;
-  card.appendChild(img);
-  var name = createElemWithClass("h4", "card-title");
-  name.className += " name";
-  name.innerHTML = profile.name;
-  cardBlock.appendChild(name);
-  var title = createElemWithClass("p", "card-text");
-  title.className += " title text-primary";
-  title.innerHTML = profile.title;
-  cardBlock.appendChild(title);
-  var quote = createElemWithClass("p", "card-text");
-  quote.className += " quote text-muted font-italic";
-  quote.innerHTML = profile.quote;
-  cardBlock.appendChild(quote);
-  card.appendChild(cardBlock);
-  var email = createElemWithClass("p", "text-primary");
-  email.className += " email";
-  email.innerHTML =
-    '<a href="mailto:" class="btn btn-primary"><i class="fa fa-envelope fa-fw mr-2"></i>Contact</a>';
-  email.firstChild.href += profile.email;
-  cardFooter.appendChild(email);
-  card.appendChild(cardFooter);
-  return card;
-}
+    function createCard(profile) {
+        var card = createElemWithClass("div", "card");
+        card.className += " mb-3";
+        card.style.minWidth = "18rem";
+        card.style.maxWidth = "20rem";
+        var cardBlock = createElemWithClass("div", "card-block");
+        var cardFooter = createElemWithClass("div", "card-footer");
+        var img = createElemWithClass("img", "card-img-top");
+        img.className += " img-thumbnail";
+        img.src = profile.photo;
+        card.appendChild(img);
+        var name = createElemWithClass("h4", "card-title");
+        name.className += " name";
+        name.innerHTML = profile.name;
+        cardBlock.appendChild(name);
+        var title = createElemWithClass("p", "card-text");
+        title.className += " title text-primary";
+        title.innerHTML = profile.title;
+        cardBlock.appendChild(title);
+        var quote = createElemWithClass("p", "card-text");
+        quote.className += " quote text-muted font-italic";
+        quote.innerHTML = profile.quote;
+        cardBlock.appendChild(quote);
+        card.appendChild(cardBlock);
+        var email = createElemWithClass("p", "text-primary");
+        email.className += " email";
+        email.innerHTML =
+            '<a href="mailto:" class="btn btn-primary"><i class="fa fa-envelope fa-fw mr-2"></i>Contact</a>';
+        email.firstChild.href += profile.email;
+        cardFooter.appendChild(email);
+        card.appendChild(cardFooter);
+        return card;
+    }
 
-function render(users, numberPerRow) {
-  var rootElem = document.getElementById("root");
-  var cardDeck = createElemWithClass("div", "card-deck");
-  for (const user of users) {
-    cardDeck.appendChild(createCard(user));
-  }
-  rootElem.appendChild(cardDeck);
-}
+    function render(users, numberPerRow) {
+        var rootElem = document.getElementById("root");
+        var cardDeck = createElemWithClass("div", "card-deck");
+        for (const user of users) {
+            cardDeck.appendChild(createCard(user));
+        }
+        rootElem.appendChild(cardDeck);
+    }
 
-var staff = $.getJSON(
-  "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/staff.json",
-  function(json) {
-    render(json.data, 3);
-  }
-);
+    var staff = $.getJSON(
+        "https://raw.githubusercontent.com/EOPAtCal/eopwebsite/master/eop/staff.json",
+        function(json) {
+            render(json.data, 3);
+        }
+    );
 </script>
