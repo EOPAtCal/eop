@@ -5,7 +5,7 @@ const {
 } = require('googleapis');
 
 // If modifying these scopes, delete credentials.json.
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const TOKEN_PATH = 'token.json';
 
 // Load client secrets from a local file.
@@ -93,29 +93,27 @@ function removeDuplicates(auth) {
 }
 
 const spreadsheetId = '1AGyyd5zBrA4LnP7d_UwCVyMH4rCwxYPzM0EWnHxC0dk'
-const readRange = '17/18 APR Draft!A2:BF1986'
+const readRange = '17/18 APR Draft!A20:BF1986'
 
 function algorithm(rows) {
   const results = []
   for (let index = 0; index < rows.length; index++) {
-    if (index > 0) {
-      const row = rows[index];
-      prevRow = rows[index - 1]
-      idxSID = 1;
-      let SID = row[idxSID]
-      if (!SID) {
-        const priorSID = prevRow[idxSID]
-        if (priorSID) {
-          const newCombined = combineRows(prevRow, row)
-          // console.log(`newCombined: ${newCombined}`)
-          results.push(newCombined)
-        }
+    const row = rows[index];
+    prevRow = rows[index - 1]
+    idxSID = 1;
+    let SID = row[idxSID]
+    if (!SID) {
+      const priorSID = prevRow[idxSID]
+      if (priorSID) {
+        const newCombined = combineRows(prevRow, row)
+        // console.log(`newCombined: ${newCombined}`)
+        results.push(newCombined)
       }
     }
   }
   const numRows = results.length
   const lengthRows = results[0].length;
-  writeResults(results, `Sheet5!A2:${columnToLetter(lengthRows)}${numRows}`)
+  writeResults(results, `Sheet5!A2:${columnToLetter(lengthRows + 3)}${numRows + 3}`)
 }
 
 function combineRows(priorRow, currRow) {
