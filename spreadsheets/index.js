@@ -1,6 +1,8 @@
 const fs = require('fs');
 const readline = require('readline');
-const {google} = require('googleapis');
+const {
+  google
+} = require('googleapis');
 
 // If modifying these scopes, delete credentials.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -20,9 +22,13 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const {
+    client_secret,
+    client_id,
+    redirect_uris
+  } = credentials.installed;
   const oAuth2Client = new google.auth.OAuth2(
-      client_id, client_secret, redirect_uris[0]);
+    client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
@@ -69,20 +75,57 @@ function getNewToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function removeDuplicates(auth) {
-  const sheets = google.sheets({version: 'v4', auth});
+  const sheets = google.sheets({
+    version: 'v4',
+    auth
+  });
   sheets.spreadsheets.values.get({
     spreadsheetId: '1AGyyd5zBrA4LnP7d_UwCVyMH4rCwxYPzM0EWnHxC0dk',
-    range: 'A2:BF1986',
+    range: '17/18 APR Draft!A2:BF1986',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
     if (rows.length) {
-
-      rows.map((row) => {
-        console.log(row)
-      });
+      algorithm(rows)
     } else {
       console.log('No data found.');
     }
   });
+}
+
+
+function algorithm(rows) {
+  for (let index = 0; index < rows.length; index++) {
+    if (index > 0) {
+      const row = rows[index];
+      prevRow = rows[index - 1]
+      idxSID = 1;
+      let SID = row[idxSID]
+      if (!SID) {
+        const priorSID = prevRow[idxSID]
+        if (priorSID) {
+          const newCombined = combineRows(prevRow, row)
+          console.log(`newCombined: ${newCombined}`)
+        }
+      }
+
+    }
+  }
+}
+
+function combineRows(priorRow, currRow) {
+  console.log(`prior: ${priorRow} \n curr: ${currRow}`)
+  const newRow = []
+  for (let index = 0; index < currRow.length; index++) {
+    const currValue = currRow[index];
+    const priorVal = priorRow[index]
+    if (priorVal === currValue) {
+      newRow[index] = priorVal
+    } else if (!priorVal && currValue) {
+        newRow[index] = currValue
+    } else if (!currValue && priorVal) {
+        newRow[index] = priorVal
+    }
+  }
+  return newRow
 }
