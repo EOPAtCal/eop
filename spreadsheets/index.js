@@ -69,19 +69,18 @@ function getNewToken(oAuth2Client, callback) {
   });
 }
 
+let sheets;
 /**
- * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function removeDuplicates(auth) {
-  const sheets = google.sheets({
+  sheets = google.sheets({
     version: 'v4',
     auth
   });
   sheets.spreadsheets.values.get({
-    spreadsheetId: '1AGyyd5zBrA4LnP7d_UwCVyMH4rCwxYPzM0EWnHxC0dk',
-    range: '17/18 APR Draft!A2:BF1986',
+    spreadsheetId: spreadsheetId,
+    range: readRange,
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
@@ -93,8 +92,11 @@ function removeDuplicates(auth) {
   });
 }
 
+const spreadsheetId = '1AGyyd5zBrA4LnP7d_UwCVyMH4rCwxYPzM0EWnHxC0dk'
+const readRange = '17/18 APR Draft!A2:BF1986'
 
 function algorithm(rows) {
+  const results = []
   for (let index = 0; index < rows.length; index++) {
     if (index > 0) {
       const row = rows[index];
@@ -105,16 +107,19 @@ function algorithm(rows) {
         const priorSID = prevRow[idxSID]
         if (priorSID) {
           const newCombined = combineRows(prevRow, row)
-          console.log(`newCombined: ${newCombined}`)
+          // console.log(`newCombined: ${newCombined}`)
+          results.push(newCombined)
         }
       }
-
     }
   }
+  const numRows = results.length
+  const lengthRows = results[0].length;
+  writeResults(results, `Sheet5!A2:${columnToLetter(lengthRows)}${numRows}`)
 }
 
 function combineRows(priorRow, currRow) {
-  console.log(`prior: ${priorRow} \n curr: ${currRow}`)
+  // console.log(`prior: ${priorRow} \n curr: ${currRow}`)
   const newRow = []
   for (let index = 0; index < currRow.length; index++) {
     const currValue = currRow[index];
@@ -122,10 +127,38 @@ function combineRows(priorRow, currRow) {
     if (priorVal === currValue) {
       newRow[index] = priorVal
     } else if (!priorVal && currValue) {
-        newRow[index] = currValue
+      newRow[index] = currValue
     } else if (!currValue && priorVal) {
-        newRow[index] = priorVal
+      newRow[index] = priorVal
     }
   }
   return newRow
+}
+
+function writeResults(rows, range) {
+  sheets.spreadsheets.values.update({
+    spreadsheetId,
+    range: range,
+    valueInputOption: 'RAW',
+    resource: {
+      values: rows
+    },
+  }, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('%d cells updated.', result.updatedCells);
+    }
+  });
+}
+
+// helpers
+function columnToLetter(column) {
+  var temp, letter = '';
+  while (column > 0) {
+    temp = (column - 1) % 26;
+    letter = String.fromCharCode(temp + 65) + letter;
+    column = (column - temp - 1) / 26;
+  }
+  return letter;
 }
